@@ -1,0 +1,12 @@
+C:\myblog\AdminBlogLibrary\bin\Debug\net6.0\AdminBlogLibrary.deps.json
+C:\myblog\AdminBlogLibrary\bin\Debug\net6.0\AdminBlogLibrary.dll
+C:\myblog\AdminBlogLibrary\bin\Debug\net6.0\ref\AdminBlogLibrary.dll
+C:\myblog\AdminBlogLibrary\bin\Debug\net6.0\AdminBlogLibrary.pdb
+C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.csproj.AssemblyReference.cache
+C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.AssemblyInfoInputs.cache
+C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.AssemblyInfo.cs
+C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.csproj.CoreCompileInputs.cache
+C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.dll
+C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\ref\AdminBlogLibrary.dll
+C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.pdb
