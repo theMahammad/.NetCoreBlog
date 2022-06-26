@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\myblog\\AdminBlog\\AdminBlog.csproj": {}
+    "C:\\myblog\\adminblog\\AdminBlog.csproj": {}
   },
   "projects": {
     "C:\\myblog\\AdminBlogLibrary\\AdminBlogLibrary.csproj": {
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\myblog\\AdminBlog\\AdminBlog.csproj": {
+    "C:\\myblog\\adminblog\\AdminBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\myblog\\AdminBlog\\AdminBlog.csproj",
+        "projectUniqueName": "C:\\myblog\\adminblog\\AdminBlog.csproj",
         "projectName": "AdminBlog",
-        "projectPath": "C:\\myblog\\AdminBlog\\AdminBlog.csproj",
+        "projectPath": "C:\\myblog\\adminblog\\AdminBlog.csproj",
         "packagesPath": "C:\\Users\\hssjx\\.nuget\\packages\\",
-        "outputPath": "C:\\myblog\\AdminBlog\\obj\\",
+        "outputPath": "C:\\myblog\\adminblog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

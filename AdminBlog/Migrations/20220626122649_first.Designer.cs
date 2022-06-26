@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AdminBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20220626121318_first")]
+    [Migration("20220626122649_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

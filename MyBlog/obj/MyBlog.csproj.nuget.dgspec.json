@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\myblog\\MyBlog\\MyBlog.csproj": {}
+    "C:\\myblog\\myblog\\MyBlog.csproj": {}
   },
   "projects": {
     "C:\\myblog\\MyBlogLibrary\\MyBlogLibrary.csproj": {
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\myblog\\MyBlog\\MyBlog.csproj": {
+    "C:\\myblog\\myblog\\MyBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\myblog\\MyBlog\\MyBlog.csproj",
+        "projectUniqueName": "C:\\myblog\\myblog\\MyBlog.csproj",
         "projectName": "MyBlog",
-        "projectPath": "C:\\myblog\\MyBlog\\MyBlog.csproj",
+        "projectPath": "C:\\myblog\\myblog\\MyBlog.csproj",
         "packagesPath": "C:\\Users\\hssjx\\.nuget\\packages\\",
-        "outputPath": "C:\\myblog\\MyBlog\\obj\\",
+        "outputPath": "C:\\myblog\\myblog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -105,6 +105,22 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
