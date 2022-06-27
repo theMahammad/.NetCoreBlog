@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AdminBlog.Models
+namespace MyBlog.Models
 {
     public class Author
     {

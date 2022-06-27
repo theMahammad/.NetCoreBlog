@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 
-namespace AdminBlog.Models
+namespace MyBlog.Models
 {
     public class BlogContext:DbContext {
         public BlogContext(DbContextOptions<BlogContext> options) :base(options){

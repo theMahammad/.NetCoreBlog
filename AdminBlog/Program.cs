@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 using Microsoft.EntityFrameworkCore.Design;
 var builder = WebApplication.CreateBuilder(args);
- 
+
 // Add services to the container.
 builder.Services.AddControllersWithViews(); 
 
-builder.Services.AddDbContext<BlogContext>(options=> options.UseSqlServer(builder.Configuration.GetConnectionString("MyBlogDbCore")));
+builder.Services.AddDbContext<BlogContext>(options=> options.UseSqlServer(builder.Configuration.GetConnectionString("MyBlogCore")));
 var app = builder.Build();
 
 void ConfigureServices(){

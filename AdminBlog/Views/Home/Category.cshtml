@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Category";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="POST" action="/Home/AddCategory">
+  
+ 
+    <input type="hidden" class="form-control" name="Id"/>
+    <input type="text" class="form-control" name="Name"  placeholder="Kateqoriya adını daxil edin"/>
+    
+    <br/>
+    
+  <button type="submit" class="btn btn-primary">Əlavə et</button>
+</form> 

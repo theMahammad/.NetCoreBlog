@@ -4,7 +4,7 @@
 
 namespace AdminBlog.Migrations
 {
-    public partial class first : Migration
+    public partial class Creation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
