@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9NgzaS2Vz6O7QCF0v6Idu3YORNHqy1Twcwrzh+DorEy8zlDMAdeIP+jFg95wUxUm0PoUKN7oBIkNkaeKdSf/zA==",
+  "dgSpecHash": "u+gXkEimhJeeEXeb+NcblO/qaPI/ay22n56KeIfDVvkU30+q2SMudisra9F5J2GDcVkNabrF4qAqLaY9AKHy8w==",
   "success": true,
   "projectFilePath": "C:\\myblog\\adminblog\\AdminBlog.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\hssjx\\.nuget\\packages\\font.awesome\\5.15.4\\font.awesome.5.15.4.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

@@ -20,6 +20,12 @@ public class HomeController : Controller
 
         return RedirectToAction(nameof(Category));
     }
+    public async Task<IActionResult> DeleteCategory(int? id){
+        Category category = await _context.Categories.FindAsync(id);
+        _context.Remove(category);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Category));
+    }
     public IActionResult Index()
     {
         return View();
@@ -27,7 +33,8 @@ public class HomeController : Controller
 
     public IActionResult Category()
     {
-        return View();
+        List<Category> categories = _context.Categories.ToList();
+        return View(categories);
     }
     public IActionResult Author(){
         return View();

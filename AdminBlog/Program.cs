@@ -11,7 +11,6 @@ builder.Services.AddDbContext<BlogContext>(options=> options.UseSqlServer(builde
 var app = builder.Build();
 
 void ConfigureServices(){
-
 }
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
