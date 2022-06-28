@@ -15,12 +15,21 @@ public class HomeController : Controller
     }
     [HttpPost]
     public async Task<IActionResult> AddCategory(Category category){
+        if(category.Id ==0){
         await _context.AddAsync(category);
+        }else{
+            _context.Update(category);
+        }
+        
         await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(Category));
     }
-    public async Task<IActionResult> DeleteCategory(int? id){
+  public async Task<IActionResult> CategoryDetails(int? id){
+    Category category = await _context.Categories.FindAsync(id);
+    return Json(category);
+  }
+     public async Task<IActionResult> DeleteCategory(int? id){
         Category category = await _context.Categories.FindAsync(id);
         _context.Remove(category);
         await _context.SaveChangesAsync();

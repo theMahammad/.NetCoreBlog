@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<AdminBlog.Models.Category>;
-
 @{
     ViewData["Title"] = "Kateqoriyalar";
 }
@@ -20,22 +19,61 @@
         <td>
         @item.Name  
         </td>
-        <td>
-          <a asp-route-id="@item.Id" asp-action="DeleteCategory" ><i class="fa fa-trash" aria-hidden="true"></i></a>
+        <td >
+          <a asp-route-id="@item.Id" asp-action="DeleteCategory" class="btn btn-primary">Sil</a>
+          <button class="btn btn-secondary" onclick="updateForm(@item.Id)">Dəyişdir</button>
         </td>
+      
       </tr>
     }
   </tbody>
    
    </table>
-<h2>Yeni kateqoriya əlavə et</h2>
+
+
+  
+
+<div id="FormCategory">
+
+
+  <h2 id="FormCategoryTitle">Yeni kateqoriya əlavə et</h2>
 <form method="POST" action="/Home/AddCategory">
   
  
-    <input type="hidden" class="form-control" name="Id"/>
-    <input type="text" class="form-control" name="Name"  placeholder="Kateqoriya adını daxil edin"/>
+    <input type="hidden" class="form-control" name="Id" id="Id"/>
+    <input type="text" class="form-control" name="Name" id="Name"  placeholder="Kateqoriya adını daxil edin"/>
     
     <br/>
     
-  <button type="submit" class="btn btn-primary">Əlavə et</button>
+  <button type="submit" class="btn btn-primary" id="submitButton">Əlavə et</button>
+  <button class="btn btn-danger" type="button"  id="rejectUpdate"onclick="setToDefault()" >Ləğv et</button>
 </form> 
+</div>
+
+@section Scripts{
+<script> 
+  $('#rejectUpdate').hide();
+  function updateForm(Id){
+    fetch("/Home/CategoryDetails?Id="+Id)
+    .then(res => res.json())
+    .then(res => {
+      $('#Id').val(res.id)
+      $('#Name').text(res.name)
+      $('#rejectUpdate').show();
+      $('#FormCategoryTitle').text(`"${res.name}" kateqoriyasını dəyişdir`)
+      $('#submitButton').text('Dəyişikliyi təsdiqlə')
+      
+    })
+
+  }
+  function setToDefault(){
+    $('#Id').val(null)
+      $('#Name').val(null)
+      $('#FormCategoryTitle').text('Yeni kateqoriya əlavə et')
+      $('#submitButton').text('Əlavə et')
+      $('#rejectUpdate').hide();
+  }
+</script>
+
+}
+
