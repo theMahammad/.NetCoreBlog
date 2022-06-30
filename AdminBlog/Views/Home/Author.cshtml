@@ -14,6 +14,7 @@
         <th>Soyad</th>
         <th>Email</th>
         <th>Şifrə</th>  
+        <th>Əməliyyatlar</th>
     </thead>
      <tbody>
     @if(Model!=null){
@@ -26,6 +27,9 @@
         <td>@item.Surname</td>
         <td>@item.Email</td>
         <td>@item.Password</td>
+        <td>
+            <i class="fa-solid fa-trash"></i>
+        </td>
     </tr>
 }
     }
@@ -55,7 +59,8 @@
 
 </div>
 @section Scripts{
-    <script type="text/javascript">
+  
+    <script>
         $('#CancelButton').hide();
         
         function ExampleSerialize(){
@@ -68,8 +73,23 @@
                 contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
                 data : data,
                 success : function(result){
-                    alert('Succesfully received data');
-                    console.log(result);
+                    console.log("Success!")
+                    
+                    $('tbody').html('');
+                    for(var i=0; i<result.length;i++){
+                        var item = result[i];
+                      var element = ` <tr>
+                                            <th>${item.id}</th>
+                                            <td>${item.name}</td>
+                                            <td>${item.surname}</td>
+                                            <td>${item.email}</td>
+                                            <td>${item.password}</td>
+                                        </tr>`
+                    $('tbody').append(element);                                        
+                    }
+                    
+                    
+                    
                 },
                 error: function(){
                     alert('Failed to receive data');
