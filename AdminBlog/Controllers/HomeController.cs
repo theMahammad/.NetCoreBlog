@@ -41,20 +41,18 @@ public class HomeController : Controller
 
     }
     public async Task<IActionResult> AddAuthor(Author author){
-        await _context.Attach(author).GetDatabaseValuesAsync();
-        
-        var id = author.Id;
-        System.Console.WriteLine(id);
-        if(ModelState.IsValid){
-            author.Id=0;
-            await _context.AddAsync(author);
+        if(author.Id==0){
+             await _context.AddAsync(author);
+                        }
+        else{
+            _context.Update(author);
+            }
             await _context.SaveChangesAsync();
-            var authors = await _context.Authors.ToListAsync();
-            var jsonAuthors =  Json(authors);
-            return(jsonAuthors);
-        }else{
-            return this.BadRequest("Enter required fields");
-        }
+                var authors = await _context.Authors.ToListAsync();
+                var jsonAuthors =  Json(authors);
+                return(jsonAuthors);
+        
+       
     }
     public async Task<IActionResult> DeleteAuthor(int? id){
         Author author = await _context.Authors.FindAsync(id);

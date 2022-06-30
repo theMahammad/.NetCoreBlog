@@ -67,7 +67,11 @@
 
 
         $('#CancelButton').hide();
-        
+        function SetToDefault(){
+            $('#CancelButton').hide();
+            $('#AuthorForm input').val(null);
+            $('#SubmitButton').text('Əlavə et');
+        }
     function EditAuthor(Id){
       $.ajax({
             type : 'POST',
@@ -75,7 +79,13 @@
             contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
             success : (result)=>{
                 console.log(result.name)   
-        
+                $('#CancelButton').show();
+                $('input#Id').val(result.id);
+                $('input#Name').val(result.name);
+                $('input#Surname').val(result.surname);
+                $('input#Email').val(result.email);
+                $('input#Password').val(result.password);
+                $('#SubmitButton').text('Dəyişikliyi təsdiqlə')
             }
         })
 
@@ -90,8 +100,7 @@
                     url : `/Home/DeleteAuthor?Id=${Id}`,
                     contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
                     success : (result)=>{
-                            console.log(result);
-                            alert("Yazar silindi");
+                           
                             $(`tr#${Id}`).remove();
                     },
                     error: ()=>{
@@ -104,7 +113,7 @@
         }
 
         function ExampleSerialize(){
-            $('#Id').val(1);
+            
             var data = $('#AuthorForm').serialize();
             console.log(data);
             $.ajax({
@@ -118,18 +127,20 @@
                     $('tbody').html('');
                     for(var i=0; i<result.length;i++){
                         var item = result[i];
-                      var element = ` <tr>
+                      var element = ` <tr id="${item.id}">
                                             <th>${item.id}</th>
                                             <td>${item.name}</td>
                                             <td>${item.surname}</td>
                                             <td>${item.email}</td>
                                             <td>${item.password}</td>
-                                            <td><i class="fa-solid fa-trash-can"></i></td>
+                                            <td><a type="button" class="btn btn-danger" onclick="DeleteAuthor(${item.id})" >Sil</a>
+                                              <a type="button" class="btn btn-warning" onclick="EditAuthor(${item.id})">Dəyişdir</a>
+                                            </td>
                                         </tr>`
                     $('tbody').append(element);                   
                                          
                     }
-                    $('#AuthorForm input ').val(null);
+                    SetToDefault();
                     
                     
                     

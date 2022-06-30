@@ -54,6 +54,13 @@
 <script> 
   $('#rejectUpdate').hide();
   function updateForm(Id){
+
+    $.ajax({
+      type : 'POST',
+      url : `/Home/AuthorDetails?Id=${Id}`,
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+      success : (result)=>{}
+    })
     fetch("/Home/CategoryDetails?Id="+Id)
     .then(res => res.json())
     .then(res => {
