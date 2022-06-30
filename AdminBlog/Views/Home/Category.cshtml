@@ -58,7 +58,7 @@
     .then(res => res.json())
     .then(res => {
       $('#Id').val(res.id)
-      $('#Name').text(res.name)
+      $('#Name').val(res.name)
       $('#rejectUpdate').show();
       $('#FormCategoryTitle').text(`"${res.name}" kateqoriyasını dəyişdir`)
       $('#submitButton').text('Dəyişikliyi təsdiqlə')

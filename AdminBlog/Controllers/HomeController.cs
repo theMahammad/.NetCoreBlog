@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using AdminBlog.Models;
-
+using Microsoft.EntityFrameworkCore;
 namespace AdminBlog.Controllers;
 
 public class HomeController : Controller
@@ -35,18 +35,35 @@ public class HomeController : Controller
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Category));
     }
+    public async Task<IActionResult> AddAuthor(Author author){
+        await _context.Attach(author).GetDatabaseValuesAsync();
+        
+        var id = author.Id;
+        System.Console.WriteLine(id);
+        if(ModelState.IsValid){
+            author.Id=0;
+            await _context.AddAsync(author);
+            await _context.SaveChangesAsync();
+            var authors = await _context.Authors.ToListAsync();
+            var jsonAuthors =  Json(authors);
+            return(jsonAuthors);
+        }else{
+            return this.BadRequest("Enter required fields");
+        }
+    }
     public IActionResult Index()
     {
         return View();
     }
 
     public IActionResult Category()
-    {
-        List<Category> categories = _context.Categories.ToList();
+    {   
+        List<Category> categories =  _context.Categories.ToList();
         return View(categories);
     }
     public IActionResult Author(){
-        return View();
+        
+        return View(_context.Authors.ToList());
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
