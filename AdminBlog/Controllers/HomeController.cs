@@ -35,6 +35,11 @@ public class HomeController : Controller
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Category));
     }
+    public async Task<IActionResult> AuthorDetails(int? id){
+        Author author = await _context.Authors.FindAsync(id);
+        return Json(author);
+
+    }
     public async Task<IActionResult> AddAuthor(Author author){
         await _context.Attach(author).GetDatabaseValuesAsync();
         
@@ -51,8 +56,16 @@ public class HomeController : Controller
             return this.BadRequest("Enter required fields");
         }
     }
+    public async Task<IActionResult> DeleteAuthor(int? id){
+        Author author = await _context.Authors.FindAsync(id);
+       _context.Remove(author);
+       await _context.SaveChangesAsync();
+        return this.Ok("Author is deleted");
+
+    }
     public IActionResult Index()
     {
+        
         return View();
     }
 

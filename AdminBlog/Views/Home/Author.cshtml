@@ -21,14 +21,16 @@
 
  @foreach (var item in Model)
 {
-    <tr>
+    <tr id="@item.Id">
         <th>@item.Id</th>
         <td>@item.Name</td>
         <td>@item.Surname</td>
         <td>@item.Email</td>
         <td>@item.Password</td>
         <td>
-            <i class="fa-solid fa-trash"></i>
+           <a type="button" class="btn btn-danger" onclick="DeleteAuthor(@item.Id)" >Sil</a>
+           <a type="button" class="btn btn-warning" onclick="EditAuthor(@item.Id)">Dəyişdir</a>
+            
         </td>
     </tr>
 }
@@ -55,14 +57,52 @@
 <button class="btn btn-primary" type="button" id="SubmitButton" onclick="ExampleSerialize()">Əlavə et</button>
 <button class="btn btn-danger" type="button" id="CancelButton"  onclick="SetToDefault()">Ləğv et</button>
 
+
 </form>
 
 </div>
 @section Scripts{
   
     <script>
+
+
         $('#CancelButton').hide();
         
+    function EditAuthor(Id){
+      $.ajax({
+            type : 'POST',
+            url : `/Home/AuthorDetails?Id=${Id}`,
+            contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+            success : (result)=>{
+                console.log(result.name)   
+        
+            }
+        })
+
+
+    }
+
+
+        function DeleteAuthor(Id){
+            if(confirm("Bu yazarı silmək istədiyinizə əminsinizmi?")){
+            $.ajax({
+                    type:'POST',
+                    url : `/Home/DeleteAuthor?Id=${Id}`,
+                    contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
+                    success : (result)=>{
+                            console.log(result);
+                            alert("Yazar silindi");
+                            $(`tr#${Id}`).remove();
+                    },
+                    error: ()=>{
+                        console.log("File can't be deleted")
+                    }
+                })
+            }
+               
+                
+        }
+
         function ExampleSerialize(){
             $('#Id').val(1);
             var data = $('#AuthorForm').serialize();
@@ -84,9 +124,12 @@
                                             <td>${item.surname}</td>
                                             <td>${item.email}</td>
                                             <td>${item.password}</td>
+                                            <td><i class="fa-solid fa-trash-can"></i></td>
                                         </tr>`
-                    $('tbody').append(element);                                        
+                    $('tbody').append(element);                   
+                                         
                     }
+                    $('#AuthorForm input ').val(null);
                     
                     
                     
