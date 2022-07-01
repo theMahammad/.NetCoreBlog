@@ -22,8 +22,10 @@ public class HomeController : Controller
         }
         
         await _context.SaveChangesAsync();
+        var categories = _context.Categories.ToList();
+        return Json(categories);
 
-        return RedirectToAction(nameof(Category));
+        
     }
   public async Task<IActionResult> CategoryDetails(int? id){
     Category category = await _context.Categories.FindAsync(id);
@@ -33,7 +35,7 @@ public class HomeController : Controller
         Category category = await _context.Categories.FindAsync(id);
         _context.Remove(category);
         await _context.SaveChangesAsync();
-        return RedirectToAction(nameof(Category));
+        return this.Ok("Operation is completed succesfully!");
     }
     public async Task<IActionResult> AuthorDetails(int? id){
         Author author = await _context.Authors.FindAsync(id);
