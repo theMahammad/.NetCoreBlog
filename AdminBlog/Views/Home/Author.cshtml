@@ -45,7 +45,7 @@
 <hr>
 
 <div id="AuthorOperations">
-    <h2>Yazar əlavə et</h2>
+    <h2 id="AuthorOperationsTitle">Yazar əlavə et</h2>
 <form id="AuthorForm" method="POST" action="/Home/AddAuthor">
 
 <input class="form-control" type="hidden" id="Id" name="Id" >
@@ -86,6 +86,7 @@
                 $('input#Email').val(result.email);
                 $('input#Password').val(result.password);
                 $('#SubmitButton').text('Dəyişikliyi təsdiqlə')
+                $('#AuthorOperationsTitle').text(`${result.name} adlı yazarı dəyişdir` )
             }
         })
 

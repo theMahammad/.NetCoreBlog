@@ -8,10 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews(); 
 
 builder.Services.AddDbContext<BlogContext>(options=> options.UseSqlServer(builder.Configuration.GetConnectionString("MyBlogCore")));
+builder.Services.AddSession();
 var app = builder.Build();
 
-void ConfigureServices(){
-}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -26,7 +26,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

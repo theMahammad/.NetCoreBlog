@@ -13,6 +13,16 @@ public class HomeController : Controller
         _logger = logger;
         _context = context;
     }
+
+    public IActionResult Login(string Email,string Password){
+        var author = _context.Authors.FirstOrDefault(a=> a.Email== Email && a.Password == Password);
+        if(author==null){
+            return this.BadRequest("Belə yazar tapılmadı");
+        }else{
+            HttpContext.Session.SetInt32("id",author.Id);
+            return RedirectToAction(nameof(Category));
+        }
+    }
     [HttpPost]
     public async Task<IActionResult> AddCategory(Category category){
         if(category.Id ==0){
