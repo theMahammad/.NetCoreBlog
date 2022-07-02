@@ -55,6 +55,7 @@ public class HomeController : Controller
     public async Task<IActionResult> AddAuthor(Author author){
         if(author.Id==0){
              await _context.AddAsync(author);
+             
                         }
         else{
             _context.Update(author);
@@ -81,6 +82,7 @@ public class HomeController : Controller
 
     public IActionResult Category()
     {   
+        
         List<Category> categories =  _context.Categories.ToList();
         return View(categories);
     }
