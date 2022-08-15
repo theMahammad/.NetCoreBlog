@@ -1,10 +1,11 @@
 @model List<AdminBlog.Models.Author>
 @{
     ViewData["Title"]= "Yazıçılar";
-}
+    var LoginId = Context.Session.GetInt32("id");
+    }
 <h1> @ViewData["Title"]</h1>
 
-    <h3>Hello @Context.Session.GetInt32("id")</h3>
+    <h3>Salam olsun </h3>
 <div id="AuthorsList">
     
 <table class="table table-bordered">
@@ -54,7 +55,7 @@
 <input class="form-control" type="email" name="Email" id="Email" placeholder="Email adresinizi daxil edin">
 <input class="form-control" type="text" name="Password" id="Password" placeholder="Şifrənizi daxil edin">
 
-<button class="btn btn-primary" type="button" id="SubmitButton" onclick="ExampleSerialize()">Əlavə et</button>
+<button class="btn btn-primary" type="button" id="SubmitButton" onclick="AddAuthor()">Əlavə et</button>
 <button class="btn btn-danger" type="button" id="CancelButton"  onclick="SetToDefault()">Ləğv et</button>
 
 
@@ -71,6 +72,7 @@
             $('#CancelButton').hide();
             $('#AuthorForm input').val(null);
             $('#SubmitButton').text('Əlavə et');
+            $('#AuthorOperationsTitle').text('Yazar əlavə et');
         }
     function EditAuthor(Id){
       $.ajax({
@@ -113,7 +115,7 @@
                 
         }
 
-        function ExampleSerialize(){
+        function AddAuthor(){
             
             var data = $('#AuthorForm').serialize();
             console.log(data);

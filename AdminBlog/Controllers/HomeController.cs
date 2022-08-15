@@ -42,8 +42,10 @@ public class HomeController : Controller
     return Json(category);
   }
      public async Task<IActionResult> DeleteCategory(int? id){
+        
         Category category = await _context.Categories.FindAsync(id);
         _context.Remove(category);
+        
         await _context.SaveChangesAsync();
         return this.Ok("Operation is completed succesfully!");
     }

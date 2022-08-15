@@ -23,8 +23,10 @@ namespace adminblog.Controllers
             _context = context;
             }
         
+        [Route("HomePage")]
         public IActionResult Index()
         {
+            
             ViewBag.Categories = _context.Categories.Select(c=>
                 new SelectListItem(){
                     Text = c.Name,
@@ -35,12 +37,31 @@ namespace adminblog.Controllers
         }
         [Route("SaveBlog")]
         public async Task<IActionResult> SaveBlog(Blog blog){
-            if(blog!=null){
-                var file = Request.Form["Title"];
-            }
+        
+           if(blog != null){
+            var files = Request.Form.Files;
+            var file = files.First();
+            // File Save Operation
+                string savePath = Path.Combine("C:","MyBlog","MyBlog","wwwroot","img");
+                var fileName = $"{blog.Title}.{file.FileName.Split(".").Last()}";
+                var fileUrl = Path.Combine(savePath,fileName);
+                using ( var fileStream = new FileStream(fileUrl,FileMode.Create)){
+                        await file.CopyToAsync(fileStream);
+                        
+                }
+            blog.ImagePath=fileName;
+            
+            blog.AuthorId = (int) HttpContext.Session.GetInt32("id");
+            await _context.Blogs.AddAsync(blog);
+            await _context.SaveChangesAsync();
+
+            return this.Ok("Əlavə olundu");
+           }
 
             return Json(false);
         }
+        [Route("Aue")]
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [Route("Error")]
