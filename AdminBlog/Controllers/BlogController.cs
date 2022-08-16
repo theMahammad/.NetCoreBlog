@@ -43,7 +43,7 @@ namespace adminblog.Controllers
             var file = files.First();
             // File Save Operation
                 string savePath = Path.Combine("C:","MyBlog","MyBlog","wwwroot","img");
-                var fileName = $"{blog.Title}.{file.FileName.Split(".").Last()}";
+                var fileName = $"{DateTime.Now:MMddHHmmss}_{blog.Title}.{file.FileName.Split(".").Last()}";
                 var fileUrl = Path.Combine(savePath,fileName);
                 using ( var fileStream = new FileStream(fileUrl,FileMode.Create)){
                         await file.CopyToAsync(fileStream);

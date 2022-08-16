@@ -25,6 +25,7 @@
     @Html.DropDownList("Categories",null,"Bir kateqoriya seçin!",new{@class="form-control",@id="Categories"})
 </div>
 <button type="button" onclick="SaveBlog()" id="SubmitButton">Yaddaşda saxla</button>
+<button type="reset" hidden id="ResetButton"></button>
 </form>    
 @section Scripts{
     
@@ -57,6 +58,8 @@ function SaveBlog(){
         type : "POST",
         success : function(result){
             console.log(result);
+            $('#ResetButton').click();
+            
         }
     })
 } 
