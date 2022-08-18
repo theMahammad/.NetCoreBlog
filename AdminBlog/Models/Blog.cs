@@ -13,6 +13,7 @@ namespace AdminBlog.Models
         public string Content { get; set;}
         public string ImagePath { get; set; }
         public bool isPublished { get; set; }
+        public DateTime CreationTime { get; set; } = DateTime.Now;
         public Author Author { get; set; }
         public int AuthorId { get; set; }
         public Category Category { get; set; }

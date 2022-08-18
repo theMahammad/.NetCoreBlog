@@ -26,8 +26,13 @@ namespace adminblog.Controllers
         [Route("HomePage")]
         public IActionResult Index()
         {
-            
-            ViewBag.Categories = _context.Categories.Select(c=>
+            var blogs = _context.Blogs.ToList();
+           ViewBag.context = _context;
+            return View(blogs);
+        }
+        public IActionResult Blog(){
+
+             ViewBag.Categories = _context.Categories.Select(c=>
                 new SelectListItem(){
                     Text = c.Name,
                     Value= c.Id.ToString()
