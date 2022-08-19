@@ -1,6 +1,9 @@
 @{
     ViewData["Title"] = "Index";
-   
+    Blog selectedBlog = null;
+    if(ViewBag.selectedBlog is not null){
+        selectedBlog=ViewBag.selectedBlog;
+    }
 }
 @{
     

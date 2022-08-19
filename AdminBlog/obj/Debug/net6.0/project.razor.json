@@ -16323,6 +16323,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\myblog\\adminblog\\Views\\Blog\\EditBlog.cshtml",
+      "TargetPath": "Views\\Blog\\EditBlog.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\myblog\\adminblog\\Views\\Home\\Category.cshtml",
       "TargetPath": "Views\\Home\\Category.cshtml",
       "FileKind": "mvc"
