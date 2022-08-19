@@ -26,10 +26,11 @@
         <th>@item.Id</th>
         <td>@item.Title</td>
 
-        <td>@context.Categories.Find(item.CategoryId).Name</td>
+        <td>@context.Categories.Find(
+            item.CategoryId).Name</td>
         <td>
             
-           <a type="button" class="btn btn-danger" onclick="DeleteAuthor(@item.Id)" >Sil</a>
+           <a type="button" class="btn btn-danger" onclick="DeleteBlog(@item.Id)" >Sil</a>
            <a type="button" class="btn btn-warning" onclick="EditAuthor(@item.Id)">Dəyişdir</a>
             
         </td>
@@ -44,27 +45,22 @@
 </div>
 <hr>
 <hr>
-
-<div id="AuthorOperations">
-    <h2 id="AuthorOperationsTitle">Yazar əlavə et</h2>
-<form id="AuthorForm" method="POST" action="/Home/AddAuthor">
-
-<input class="form-control" type="hidden" id="Id" name="Id" >
-<input class="form-control" type="text" name="Name" id="Name" placeholder="Adınızı daxil edin">
-<input class="form-control" type="text" name="Surname" id="Surname" placeholder="Soyadınızı daxil edin">
-<input class="form-control" type="email" name="Email" id="Email" placeholder="Email adresinizi daxil edin">
-<input class="form-control" type="text" name="Password" id="Password" placeholder="Şifrənizi daxil edin">
-
-<button class="btn btn-primary" type="button" id="SubmitButton" onclick="AddAuthor()">Əlavə et</button>
-<button class="btn btn-danger" type="button" id="CancelButton"  onclick="SetToDefault()">Ləğv et</button>
-
-
-</form>
-
-</div>
 @section Scripts{
   
    <script>
+    function DeleteBlog(Id){
+        $.ajax({
+            url: `/Blog/DeleteBlog?Id=${Id}`,
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
+            type: 'POST',
+            success : (result)=>{
+                $(`tr#${Id}`).remove();
+            },
+            error : ()=>{
+                console.log("Xəta baş verdi")
+            }
+        })
+    }
     
     </script>
 }

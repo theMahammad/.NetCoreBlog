@@ -28,6 +28,7 @@ namespace adminblog.Controllers
         {
             var blogs = _context.Blogs.ToList();
            ViewBag.context = _context;
+           
             return View(blogs);
         }
         public IActionResult Blog(){
@@ -64,6 +65,20 @@ namespace adminblog.Controllers
            }
 
             return Json(false);
+        }
+        [Route("DeleteBlog")]
+        public async Task<IActionResult> DeleteBlog(int Id){
+            
+            try{
+            var selectedBlog = await _context.Blogs.FindAsync(Id);
+            _context.Remove(selectedBlog);
+            await _context.SaveChangesAsync();
+            return this.Ok("Bloq silindi");
+            
+            }catch{
+                    return this.BadRequest("Xəta baş verdi");
+            }
+            
         }
         [Route("Aue")]
         
