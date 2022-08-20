@@ -31,7 +31,7 @@
         <td>
             
            <a type="button" class="btn btn-danger" onclick="DeleteBlog(@item.Id)" >Sil</a>
-           <a type="button" class="btn btn-warning" onclick="EditAuthor(@item.Id)">Dəyişdir</a>
+           <a type="link" href="/Blog/EditBlog?Id=@item.Id" class="btn btn-warning" >Dəyişdir</a>
             
         </td>
     </tr>

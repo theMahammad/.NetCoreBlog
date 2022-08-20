@@ -1,9 +1,6 @@
 @{
     ViewData["Title"] = "Index";
-    Blog selectedBlog = null;
-    if(ViewBag.selectedBlog is not null){
-        selectedBlog=ViewBag.selectedBlog;
-    }
+    
 }
 @{
     
@@ -12,6 +9,7 @@
 
 <form action="/Blog/SaveBlog" id="BlogForm" enctype="multipart/form-data" >
 <div class="form-group">
+   
     <label for="Title">Başlıq</label>
      <input type="text" class="form-control" name="Title" id="Title">
 </div>

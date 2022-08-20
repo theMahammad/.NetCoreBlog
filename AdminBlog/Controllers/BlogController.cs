@@ -80,6 +80,18 @@ namespace adminblog.Controllers
             }
             
         }
+        [Route("EditBlog")]
+        public ActionResult EditBlog(int id){
+            Blog selectedBlog = _context.Blogs.Find(id);
+            ViewBag.selectedBlog=selectedBlog;
+            ViewBag.Categories = _context.Categories.Select(c=>
+                new SelectListItem(){
+                    Text = c.Name,
+                    Value= c.Id.ToString()
+                }
+            ).ToList();
+            return View();
+        }
         [Route("Aue")]
         
 
