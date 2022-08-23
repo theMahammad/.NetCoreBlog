@@ -1,11 +1,15 @@
 @{
     ViewData["Title"] = "Bloqu düzəlt";
     Blog selectedBlog = ViewBag.selectedBlog;
+    BlogContext context = ViewBag.context;
+    Category category = context.Categories.Find(@selectedBlog.CategoryId);
+    
 }
  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <h1>@ViewData["Title"]</h1>
-<img src="C:\MyBlog\MyBlog\wwwroot\img\@selectedBlog.ImagePath" alt="" >
+
+<img src="/img/@selectedBlog.ImagePath" alt="" >
 <form action="/Blog/SaveBlog" id="BlogForm" enctype="multipart/form-data" >
 <div class="form-group">
    <input type="text" id="Id" hidden value="@selectedBlog.Id">
@@ -27,7 +31,7 @@
 </div>
 <div class="form-group">
     @Html.Label(null,"Kateqoriya",new {@for="Categories"})
-    @Html.DropDownList("Categories",null,"Bir kateqoriya seçin!",new{@class="form-control",@id="Categories"})
+    @Html.DropDownList("Categories",null,@context.Categories.Find(@selectedBlog.CategoryId).Name,new{@class="form-control",@id="Categories"})
 </div>
 <button type="button" onclick="SaveBlog()" id="SubmitButton">Yaddaşda saxla</button>
 <button type="reset" hidden id="ResetButton"></button>

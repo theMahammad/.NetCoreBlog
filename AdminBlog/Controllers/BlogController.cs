@@ -84,6 +84,7 @@ namespace adminblog.Controllers
         public ActionResult EditBlog(int id){
             Blog selectedBlog = _context.Blogs.Find(id);
             ViewBag.selectedBlog=selectedBlog;
+            ViewBag.context=_context;
             ViewBag.Categories = _context.Categories.Select(c=>
                 new SelectListItem(){
                     Text = c.Name,
