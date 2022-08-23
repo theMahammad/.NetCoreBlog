@@ -27,13 +27,13 @@
 </div>
 <div class="form-group">
     <input class="form-control" type="file" name="ImagePath" id="ImagePath"  >
-    <input type="text"  hidden >
+    <input type="text"  hidden value="@selectedBlog.ImagePath">
 </div>
 <div class="form-group">
     @Html.Label(null,"Kateqoriya",new {@for="Categories"})
     @Html.DropDownList("Categories",null,@context.Categories.Find(@selectedBlog.CategoryId).Name,new{@class="form-control",@id="Categories"})
 </div>
-<button type="button" onclick="SaveBlog()" id="SubmitButton">Yaddaşda saxla</button>
+<button type="button" onclick="ConfirmChangesOnBlog()" id="SubmitButton">Dəyişikliyi təsdiqlə</button>
 <button type="reset" hidden id="ResetButton"></button>
 </form> 
 @section Scripts{
@@ -42,8 +42,14 @@
         $(document).ready(function(){
              $('#summernote').summernote()
              console.log('@Html.Raw(@selectedBlog.Content)')
-             $('#summernote').summernote('code','@Html.Raw(@selectedBlog.Content)');
+             $('#summernote').summernote('code','@Html.Raw(@selectedBlog.Content)'); // Using "Html.Raw" provide us to decode encoded html text 
            
+           console.log('@Html.Raw(@selectedBlog.ImagePath)');
+           function ConfirmChangesOnBlog(){
+
+           }
+           //var form = document.getElementById("BlogForm")
+           //var formData= new FormData(form);
             
             
 

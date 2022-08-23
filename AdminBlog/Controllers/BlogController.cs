@@ -8,6 +8,7 @@ using AdminBlog.Models;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.IO;
+using System.Text;
 
 namespace adminblog.Controllers
 {
@@ -22,12 +23,35 @@ namespace adminblog.Controllers
             _logger = logger;
             _context = context;
             }
-        
+        public string TurnToAscii(String str){
+            
+            StringBuilder sb = new StringBuilder(str.ToLower().Replace(" ","_"));
+
+            var characters = new Dictionary<char,char>(){
+                    {'ə','e'},
+                    {'ü','u'},
+                    {'ç','c'},
+                    {'ş','s'},
+                    {'ı','i'},
+                    {'ö','o'},
+                    {'ğ','g'}
+            }; 
+            for(var ch = 0 ; ch < sb.Length ; ch++){
+
+                foreach(var key in characters.Keys){
+                    if(sb[ch]==key){
+                        sb[ch]=characters[key];
+                    }
+                }           
+            }
+            return sb.ToString();
+        }
         [Route("HomePage")]
         public IActionResult Index()
         {
             var blogs = _context.Blogs.ToList();
            ViewBag.context = _context;
+           Console.WriteLine(TurnToAscii("Salam Mən Gəldim"));
            
             return View(blogs);
         }
