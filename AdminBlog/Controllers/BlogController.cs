@@ -121,23 +121,25 @@ namespace adminblog.Controllers
             try{
                 
             if(blogUpdated != null){
-            //     if(Request.Form.Files.Count!=0){
-            //      var files = Request.Form.Files;
-            //     var file = files.First();
-            // // File Save Operation
-            //     string savePath = Path.Combine("C:","MyBlog","MyBlog","wwwroot","img");
-            //     var fileName = TurnToAscii($"{DateTime.Now:MMddHHmmss}_{blogUpdated.Title}.{file.FileName.Split(".").Last()}");
-            //     var fileUrl = Path.Combine(savePath,fileName);
-            //     using ( var fileStream = new FileStream(fileUrl,FileMode.Create)){
-            //             await file.CopyToAsync(fileStream);
-                        
-            //     }
-            //     }
+          
             blog =  _context.Blogs.FirstOrDefault(x=> x.Id==blogUpdated.Id); 
             blog.CategoryId=blogUpdated.CategoryId;
             blog.Content=blogUpdated.Content;
             blog.Title=blogUpdated.Title;
             blog.Subtitle=blogUpdated.Subtitle;
+                  if(Request.Form.Files.Count!=0){
+                 var files = Request.Form.Files;
+                var file = files.First();
+            // File Save Operation
+                string savePath = Path.Combine("C:","MyBlog","MyBlog","wwwroot","img");
+                var fileName = TurnToAscii($"{DateTime.Now:MMddHHmmss}_{blogUpdated.Title}.{file.FileName.Split(".").Last()}");
+                var fileUrl = Path.Combine(savePath,fileName);
+                using ( var fileStream = new FileStream(fileUrl,FileMode.Create)){
+                        await file.CopyToAsync(fileStream);
+                        
+                }
+                blog.ImagePath=fileName;
+                }
             
 
            var foo = _context.Update(blog);
@@ -149,7 +151,8 @@ namespace adminblog.Controllers
             _context.SaveChanges();
             return this.Ok(blog);
             }catch(Exception e){
-                return this.BadRequest(blog);
+                
+                return this.BadRequest(Json(e));
             }
             
         }

@@ -67,6 +67,10 @@
             data.append("subtitle",document.getElementById("Subtitle").value)
             data.append('content',$('#summernote').summernote('code'))
             data.append('categoryid',document.getElementById('Categories').value);
+            for(var i=0; i < files.length; i++){
+                    data.append(files[i].name,files[i]);
+            }
+            
             console.log(data);
             @* data.append('creationtime',(@selectedBlog.CreationTime).toString())
             data.append('authorid',(@selectedBlog.AuthorId).toString())
@@ -83,8 +87,8 @@
                     console.log("Dəyişikliklər uğurla edildi")
                     
                 },
-                error : function(){
-                    console.log("Xəta baş verdi")
+                error : function(result){
+                    console.log(result);
                 }
             })  
                    
