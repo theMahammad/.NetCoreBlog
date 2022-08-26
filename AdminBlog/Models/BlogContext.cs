@@ -15,7 +15,14 @@ namespace AdminBlog.Models
         public DbSet<Author> Authors { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Blog> Blogs { get; set; }
-       
+       protected override async void OnModelCreating(ModelBuilder modelBuilder)
+         {
+             modelBuilder.Entity<Blog>()
+                 .Property(b => b.CreationTime)
+                 .HasDefaultValue(DateTime.Now);
+            
+         }
+         
         
     }
 }

@@ -23,10 +23,11 @@ namespace adminblog.Controllers
             _logger = logger;
             _context = context;
             }
+        [DebuggerStepThrough]
         public string TurnToAscii(String str){
             
             StringBuilder sb = new StringBuilder(str.ToLower().Replace(" ","_"));
-
+            
             var characters = new Dictionary<char,char>(){
                     {'ə','e'},
                     {'ü','u'},
@@ -49,9 +50,10 @@ namespace adminblog.Controllers
         [Route("HomePage")]
         public IActionResult Index()
         {
-            var blogs = _context.Blogs.ToList();
+           var blogs = _context.Blogs.ToList();
            ViewBag.context = _context;
            Console.WriteLine(TurnToAscii("Salam Mən Gəldim"));
+           
            
             return View(blogs);
         }
@@ -73,7 +75,7 @@ namespace adminblog.Controllers
             var file = files.First();
             // File Save Operation
                 string savePath = Path.Combine("C:","MyBlog","MyBlog","wwwroot","img");
-                var fileName = $"{DateTime.Now:MMddHHmmss}_{blog.Title}.{file.FileName.Split(".").Last()}";
+                var fileName =TurnToAscii($"{DateTime.Now:MMddHHmmss}_{blog.Title}.{file.FileName.Split(".").Last()}");
                 var fileUrl = Path.Combine(savePath,fileName);
                 using ( var fileStream = new FileStream(fileUrl,FileMode.Create)){
                         await file.CopyToAsync(fileStream);
@@ -109,15 +111,48 @@ namespace adminblog.Controllers
             Blog selectedBlog = _context.Blogs.Find(id);
             ViewBag.selectedBlog=selectedBlog;
             ViewBag.context=_context;
-            ViewBag.Categories = _context.Categories.Select(c=>
-                new SelectListItem(){
-                    Text = c.Name,
-                    Value= c.Id.ToString()
-                }
-            ).ToList();
+            ViewBag.Categories = _context.Categories.ToList();
             return View();
         }
-        [Route("Aue")]
+        [Route("EditBlogConfirming")]
+        [HttpPost]
+        public async Task<IActionResult> EditBlogConfirming(Blog blogUpdated){
+            Blog blog = null;
+            try{
+                
+            if(blogUpdated != null){
+            //     if(Request.Form.Files.Count!=0){
+            //      var files = Request.Form.Files;
+            //     var file = files.First();
+            // // File Save Operation
+            //     string savePath = Path.Combine("C:","MyBlog","MyBlog","wwwroot","img");
+            //     var fileName = TurnToAscii($"{DateTime.Now:MMddHHmmss}_{blogUpdated.Title}.{file.FileName.Split(".").Last()}");
+            //     var fileUrl = Path.Combine(savePath,fileName);
+            //     using ( var fileStream = new FileStream(fileUrl,FileMode.Create)){
+            //             await file.CopyToAsync(fileStream);
+                        
+            //     }
+            //     }
+            blog =  _context.Blogs.FirstOrDefault(x=> x.Id==blogUpdated.Id); 
+            blog.CategoryId=blogUpdated.CategoryId;
+            blog.Content=blogUpdated.Content;
+            blog.Title=blogUpdated.Title;
+            blog.Subtitle=blogUpdated.Subtitle;
+            
+
+           var foo = _context.Update(blog);
+            
+            }
+            
+            
+            
+            _context.SaveChanges();
+            return this.Ok(blog);
+            }catch(Exception e){
+                return this.BadRequest(blog);
+            }
+            
+        }
         
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
