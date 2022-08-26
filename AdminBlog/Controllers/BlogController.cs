@@ -9,6 +9,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.IO;
 using System.Text;
+using System.Drawing;  
+using System.Web;
 
 namespace adminblog.Controllers
 {
@@ -47,6 +49,10 @@ namespace adminblog.Controllers
             }
             return sb.ToString();
         }
+        public void DeleteFile(string fileName){
+            string path = @"C:\MyBlog\MyBlog\wwwroot\img\"+fileName;
+            System.IO.File.Delete(path);
+        }
         [Route("HomePage")]
         public IActionResult Index()
         {
@@ -57,6 +63,7 @@ namespace adminblog.Controllers
            
             return View(blogs);
         }
+        [Route("AddNewBlog")]
         public IActionResult Blog(){
 
              ViewBag.Categories = _context.Categories.Select(c=>
@@ -92,12 +99,15 @@ namespace adminblog.Controllers
 
             return Json(false);
         }
+        
         [Route("DeleteBlog")]
         public async Task<IActionResult> DeleteBlog(int Id){
-            
+           
             try{
             var selectedBlog = await _context.Blogs.FindAsync(Id);
+             
             _context.Remove(selectedBlog);
+            DeleteFile(selectedBlog.ImagePath);
             await _context.SaveChangesAsync();
             return this.Ok("Bloq silindi");
             
@@ -136,6 +146,7 @@ namespace adminblog.Controllers
                 var fileUrl = Path.Combine(savePath,fileName);
                 using ( var fileStream = new FileStream(fileUrl,FileMode.Create)){
                         await file.CopyToAsync(fileStream);
+                        DeleteFile(blog.ImagePath);
                         
                 }
                 blog.ImagePath=fileName;

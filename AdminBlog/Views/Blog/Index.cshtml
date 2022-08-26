@@ -1,11 +1,13 @@
 @model List<AdminBlog.Models.Blog>
 @{
-    ViewData["Title"]= "Yazıçılar";
+    ViewData["Title"]= "Bloqlar";
     var LoginId = Context.Session.GetInt32("id");
     var context = ViewBag.context;
     }
 <h1> @ViewData["Title"]</h1>
-
+<hr>
+<a class="form-control btn btn-success mb-2" href="/Blog/AddNewBlog">Yeni bloq əlavə et</a>
+<hr>
   
 <div id="BlogsList">
     
@@ -50,6 +52,9 @@
   
    <script>
     function DeleteBlog(Id){
+        if(confirm("Bloqu silmək istədiyinizdən əminsiniz?")){
+
+        
         $.ajax({
             url: `/Blog/DeleteBlog?Id=${Id}`,
             contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
@@ -61,6 +66,7 @@
                 console.log("Xəta baş verdi")
             }
         })
+        }
     }
     
     </script>

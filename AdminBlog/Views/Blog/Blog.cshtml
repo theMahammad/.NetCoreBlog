@@ -64,6 +64,7 @@ function SaveBlog(){
         success : function(result){
             console.log(result);
             $('#ResetButton').click();
+            location.href="/Blog/HomePage"
             
         },error : function(result){
             console.log(result)
