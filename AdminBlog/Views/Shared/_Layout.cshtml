@@ -25,6 +25,11 @@
             margin-top: 20%;
             margin-left: 20%;
         }
+        #LogoutLink{
+            position: absolute;
+            right: 150px;
+            
+        }
     </style>
 </head>
 
@@ -72,6 +77,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="Index">Bloqlar</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" id="LogoutLink" asp-area="" asp-controller="Home" asp-action="Logout"><i class="fas fa-sign-out-alt"></i></a>
                         </li>
                     </ul>
                 </div>

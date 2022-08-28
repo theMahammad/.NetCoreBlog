@@ -17,7 +17,7 @@ public class HomeController : Controller
     public IActionResult Login(string email,string password){
         if(email=="admin@gmail.com" && password=="admin"){
             HttpContext.Session.SetInt32("id",0);
-            HttpContext.Session.SetString("password",password);
+            
             return(RedirectToAction(nameof(Index)));
         }else{
          var author = _context.Authors.FirstOrDefault(a=> a.Email== email && a.Password == password);
@@ -29,6 +29,10 @@ public class HomeController : Controller
         }
         }
         
+    }
+    public IActionResult Logout(){
+        HttpContext.Session.Remove("id");
+        return RedirectToAction(nameof(Index));
     }
     [HttpPost]
     public async Task<IActionResult> AddCategory(Category category){

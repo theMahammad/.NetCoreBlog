@@ -3,6 +3,8 @@
     Blog selectedBlog = ViewBag.selectedBlog;
     BlogContext context = ViewBag.context;
     Category category = context.Categories.Find(@selectedBlog.CategoryId);
+    var loginId = Context.Session.GetInt32("id");
+    
     
 }
  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
@@ -39,7 +41,7 @@
         
     </select>
 </div>
-<button type="button" onclick="ConfirmChangesOnBlog()" id="SubmitButton">Dəyişikliyi təsdiqlə</button>
+<button type="button" class="btn btn-primary form-control" onclick="ConfirmChangesOnBlog()" id="SubmitButton">Dəyişikliyi təsdiqlə</button>
 <button type="reset" hidden id="ResetButton"></button>
 </form> 
 @section Scripts{
@@ -51,7 +53,17 @@
              console.log('@Html.Raw(@selectedBlog.Content)')
              $('#summernote').summernote('code','@Html.Raw(@selectedBlog.Content)'); // Using "Html.Raw" provide us to decode encoded html text 
            
-           console.log('@Html.Raw(@selectedBlog.ImagePath)');
+           if(@loginId==0){
+             $('.form-control').each(function(){
+            $(this).css('pointer-events', 'none');
+            });
+            $('#summernote').summernote('disable')
+            $('#SubmitButton').prop('disabled',true)
+           }
+           
+          
+  
+
         })
            
           

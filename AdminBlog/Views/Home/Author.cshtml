@@ -27,12 +27,18 @@
         <td>@item.Name</td>
         <td>@item.Surname</td>
         <td>@item.Email</td>
-        <td>@item.Password</td>
+        <td>@if(LoginId==0){
+            @item.Password
+            }
+                </td>
+        @if(LoginId==0){
         <td>
            <a type="button" class="btn btn-danger" onclick="DeleteAuthor(@item.Id)" >Sil</a>
            <a type="button" class="btn btn-warning" onclick="EditAuthor(@item.Id)">Dəyişdir</a>
             
         </td>
+        }
+       
     </tr>
 }
     }
@@ -44,6 +50,8 @@
 </div>
 <hr>
 <hr>
+@if(LoginId==0){
+
 
 <div id="AuthorOperations">
     <h2 id="AuthorOperationsTitle">Yazar əlavə et</h2>
@@ -62,6 +70,7 @@
 </form>
 
 </div>
+}
 @section Scripts{
   
     <script>

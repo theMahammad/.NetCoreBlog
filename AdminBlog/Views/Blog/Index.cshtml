@@ -41,6 +41,15 @@
            <a type="link" href="/Blog/EditBlog?Id=@item.Id" class="btn btn-warning" >Dəyişdir</a>
             
         </td>
+        
+        <td >
+            @if(item.isPublished==false){
+            <a type="button" onclick="Publish(@item.Id)" class="btn btn-success" id="PublishButton">Yayınla</a> 
+            }else{
+                <a type="button" class="btn btn-danger" id="PublishButton">Yayından geri çək</a>
+            }
+            
+            </td>
     </tr>
     }
 }
@@ -102,6 +111,16 @@
 @section Scripts{
   
    <script>
+    function Publish(id){
+            $.ajax({
+                url : `Blog/Publish?=${id}`,
+                type : "POST",
+                contentType : 'application/x-www-form-urlencoded',
+                success : function(){
+                    alert("Yayınlandı")
+                }
+            })
+    }
     function DeleteBlog(Id){
         if(confirm("Bloqu silmək istədiyinizdən əminsiniz?")){
 
