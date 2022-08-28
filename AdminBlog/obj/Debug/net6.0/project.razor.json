@@ -16318,6 +16318,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\myblog\\adminblog\\Views\\Shared\\salam.cshtml",
+      "TargetPath": "Views\\Shared\\salam.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\myblog\\adminblog\\Views\\Home\\Author.cshtml",
       "TargetPath": "Views\\Home\\Author.cshtml",
       "FileKind": "mvc"

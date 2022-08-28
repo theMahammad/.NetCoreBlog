@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ namespace AdminBlog.Models
         public DbSet<Author> Authors { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        [DebuggerStepThrough]
        protected override async void OnModelCreating(ModelBuilder modelBuilder)
          {
              modelBuilder.Entity<Blog>()

@@ -4,13 +4,15 @@
     var LoginId = Context.Session.GetInt32("id");
     var context = ViewBag.context;
     }
-<h1> @ViewData["Title"]</h1>
+    
+    @if(LoginId!=0){ //0 is a specified number which means that the person logging is admin
+      <h2> Sizin bloqlarınız</h2> 
 <hr>
-<a class="form-control btn btn-success mb-2" href="/Blog/AddNewBlog">Yeni bloq əlavə et</a>
-<hr>
-  
 <div id="BlogsList">
     
+
+
+
 <table class="table table-bordered">
     <thead>
         <th>Id</th>
@@ -24,6 +26,9 @@
 
  @foreach (var item in Model)
 {
+    if(item.AuthorId==LoginId){
+
+    
     <tr id="@item.Id">
         <th>@item.Id</th>
         <td>@item.Title</td>
@@ -37,16 +42,62 @@
             
         </td>
     </tr>
+    }
 }
     }
     </tbody>
    
    
 </table>
-
 </div>
 <hr>
+<a class="form-control btn btn-success mb-2" href="/Blog/AddNewBlog">Yeni bloq əlavə et</a>
 <hr>
+    }else{
+        <h2>Bloqlar</h2>
+        <div id="BlogsList">
+
+<table class="table table-bordered">
+    <thead>
+        <th>Id</th>
+        <th>Başlıq</th>
+        <th>Kateqoriya</th>
+        <th>Əməliyyatlar</th>
+    </thead>
+     <tbody>
+    @if(Model!=null){
+
+ @foreach (var item in Model)
+{
+    
+
+    
+    <tr id="@item.Id">
+        <th>@item.Id</th>
+        <td>@item.Title</td>
+
+        <td>@context.Categories.Find(
+            item.CategoryId).Name</td>
+        <td>
+           <a type="link" href="/Blog/EditBlog?Id=@item.Id" class="btn btn-warning" >Detallı bax</a>
+            
+        </td>
+    </tr>
+    
+}
+    }else{
+        
+    }
+    </tbody>
+   
+   
+</table>
+</div>
+    }
+
+  
+
+
 
 @section Scripts{
   
