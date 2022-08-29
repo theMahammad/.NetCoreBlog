@@ -12,6 +12,8 @@ namespace MyBlog.Models
         public string Subtitle { get; set; }
         public string Content { get; set;}
         public string ImagePath { get; set; }
+        public string CreationTime { get; set; }
+        public string Slug { get; set; }
         public bool isPublished { get; set; }
         public Author Author { get; set; }
         public int AuthorId { get; set; }

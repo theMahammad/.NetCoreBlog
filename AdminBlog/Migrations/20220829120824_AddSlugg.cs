@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AdminBlog.Migrations
 {
-    public partial class CreationTime : Migration
+    public partial class AddSlugg : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,9 +14,10 @@ namespace AdminBlog.Migrations
                 table: "Blogs",
                 type: "datetime2",
                 nullable: false,
-                defaultValue: new DateTime(2022, 8, 24, 19, 34, 28, 566, DateTimeKind.Local).AddTicks(6457),
+                defaultValue: new DateTime(2022, 8, 29, 16, 8, 24, 371, DateTimeKind.Local).AddTicks(1717),
                 oldClrType: typeof(DateTime),
-                oldType: "datetime2");
+                oldType: "datetime2",
+                oldDefaultValue: new DateTime(2022, 8, 29, 16, 6, 58, 611, DateTimeKind.Local).AddTicks(7240));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -26,9 +27,10 @@ namespace AdminBlog.Migrations
                 table: "Blogs",
                 type: "datetime2",
                 nullable: false,
+                defaultValue: new DateTime(2022, 8, 29, 16, 6, 58, 611, DateTimeKind.Local).AddTicks(7240),
                 oldClrType: typeof(DateTime),
                 oldType: "datetime2",
-                oldDefaultValue: new DateTime(2022, 8, 24, 19, 34, 28, 566, DateTimeKind.Local).AddTicks(6457));
+                oldDefaultValue: new DateTime(2022, 8, 29, 16, 8, 24, 371, DateTimeKind.Local).AddTicks(1717));
         }
     }
 }

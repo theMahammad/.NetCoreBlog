@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NLCm/qhsq0hi1Vz2Nvfg+yEPyk5K/1GYl3rUuu3sNhdwNAImqSflNDZSF3LkR5mZgSAe3kdU9Tym4614NLRn/A==",
+  "dgSpecHash": "57kk4dZOewb6055/lrKZyN35xEbM1e8Wie/kM+2WShOqRd0RhOU/n9WjJ1izNGh6phJ7Zi8/XWOK+FaixYjirg==",
   "success": true,
-  "projectFilePath": "C:\\myblog\\adminblog\\AdminBlog.csproj",
+  "projectFilePath": "C:\\MyBlog\\AdminBlog\\AdminBlog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hssjx\\.nuget\\packages\\font.awesome\\5.15.4\\font.awesome.5.15.4.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

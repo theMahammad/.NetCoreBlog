@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\myblog\\AdminBlogLibrary\\AdminBlogLibrary.csproj": {}
+    "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj": {}
   },
   "projects": {
-    "C:\\myblog\\AdminBlogLibrary\\AdminBlogLibrary.csproj": {
+    "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\myblog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
+        "projectUniqueName": "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
         "projectName": "AdminBlogLibrary",
-        "projectPath": "C:\\myblog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
+        "projectPath": "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
         "packagesPath": "C:\\Users\\hssjx\\.nuget\\packages\\",
-        "outputPath": "C:\\myblog\\AdminBlogLibrary\\obj\\",
+        "outputPath": "C:\\MyBlog\\AdminBlogLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

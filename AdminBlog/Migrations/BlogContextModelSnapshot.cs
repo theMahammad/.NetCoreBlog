@@ -72,9 +72,13 @@ namespace AdminBlog.Migrations
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 24, 19, 34, 28, 566, DateTimeKind.Local).AddTicks(6457));
+                        .HasDefaultValue(new DateTime(2022, 8, 29, 16, 8, 24, 371, DateTimeKind.Local).AddTicks(1717));
 
                     b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slug")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

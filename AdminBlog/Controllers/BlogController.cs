@@ -49,6 +49,13 @@ namespace adminblog.Controllers
             }
             return sb.ToString();
         }
+        public bool CheckSlugRepetition(string slug){
+            var blog = _context.Blogs.FirstOrDefault(b=> b.Slug==slug);
+            if(blog!=null){
+                return true;
+            }
+            return false;
+        }
         public void DeleteFile(string fileName){
             string path = @"C:\MyBlog\MyBlog\wwwroot\img\"+fileName;
             System.IO.File.Delete(path);
@@ -111,6 +118,11 @@ namespace adminblog.Controllers
             blog.ImagePath=fileName;
             
             blog.AuthorId = (int) HttpContext.Session.GetInt32("id");
+            var slug = TurnToAscii(blog.Title);
+
+             
+            blog.Slug = slug;
+             
             await _context.Blogs.AddAsync(blog);
             await _context.SaveChangesAsync();
 

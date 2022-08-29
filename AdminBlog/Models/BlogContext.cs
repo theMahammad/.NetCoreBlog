@@ -22,8 +22,7 @@ namespace AdminBlog.Models
              modelBuilder.Entity<Blog>()
                  .Property(b => b.CreationTime)
                  .HasDefaultValue(DateTime.Now);
-            
-         }
+               }
          
         
     }
