@@ -34,6 +34,7 @@ public class HomeController : Controller
         HttpContext.Session.Remove("id");
         return RedirectToAction(nameof(Index));
     }
+    
     [HttpPost]
     public async Task<IActionResult> AddCategory(Category category){
         if(category.Id ==0){

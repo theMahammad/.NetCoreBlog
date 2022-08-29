@@ -3,6 +3,7 @@
     ViewData["Title"]= "Bloqlar";
     var LoginId = Context.Session.GetInt32("id");
     var context = ViewBag.context;
+    
     }
     
     @if(LoginId!=0){ //0 is a specified number which means that the person logging is admin
@@ -18,8 +19,8 @@
         <th>Id</th>
         <th>Başlıq</th>
         <th>Kateqoriya</th>
-        <th>Vəziyyət</th> 
         <th>Əməliyyatlar</th>
+        <th>Vəziyyət</th> 
     </thead>
      <tbody>
     @if(Model!=null){
@@ -42,12 +43,16 @@
             
         </td>
         
-        <td >
-            @if(item.isPublished==false){
-            <a type="button" onclick="Publish(@item.Id)" class="btn btn-success" id="PublishButton">Yayınla</a> 
-            }else{
-                <a type="button" class="btn btn-danger" id="PublishButton">Yayından geri çək</a>
-            }
+        <td id="Publishing-@item.Id">
+           @if(item.isPublished==false){
+                <a type="button" onclick="PublishToggle(@item.Id)" id="PublishButton-@item.Id"  class="btn btn-success" >Yayınla</a> 
+           }else{
+            <a type="button" onclick="PublishToggle(@item.Id)" id="UnpublishButton-@item.Id" class="btn btn-danger" >Yayından geri çək</a>
+           }
+            
+            
+                
+            
             
             </td>
     </tr>
@@ -72,6 +77,7 @@
         <th>Başlıq</th>
         <th>Kateqoriya</th>
         <th>Əməliyyatlar</th>
+        <th>Vəziyyət</th> 
     </thead>
      <tbody>
     @if(Model!=null){
@@ -90,6 +96,15 @@
         <td>
            <a type="link" href="/Blog/EditBlog?Id=@item.Id" class="btn btn-warning" >Detallı bax</a>
             
+        </td>
+        <td>
+            @if(item.isPublished==true){
+                <a type="button" class="btn btn-primary" disabled>Yayınlanıb</a>
+            }else{
+                
+                <a type="button" class="btn btn-primary" disabled>Yayınlanmayıb</a>
+            }
+
         </td>
     </tr>
     
@@ -111,13 +126,32 @@
 @section Scripts{
   
    <script>
-    function Publish(id){
+    $(document).ready(function(){
+        
+    })
+    function PublishToggle(id){
             $.ajax({
-                url : `Blog/Publish?=${id}`,
+                url : `/Blog/PublishToggle?Id=${id}`,
                 type : "POST",
                 contentType : 'application/x-www-form-urlencoded',
-                success : function(){
-                    alert("Yayınlandı")
+                success : function(result){
+                    console.log(result);
+                    
+                    if(result.isPublished==true){
+                        $(`#PublishButton-${id}`).remove();
+                       var unpublishButton = `<a type="button" onclick="PublishToggle(${id})"  class="btn btn-danger" id="UnpublishButton-${id}">Yayından geri çək</a>`;
+                        $(`#Publishing-${id}`).append(unpublishButton);
+                    }else{
+                        $(`#UnpublishButton-${id}`).remove();
+                        var publishButton = `<a type="button" onclick="PublishToggle(${id})"  class="btn btn-success" id="PublishButton-${id}">Yayınla</a>`;
+                       $(`#Publishing-${id}`).append(publishButton);
+
+                        }
+                    
+
+                },
+                error : function(result){
+                    alert("Xəta baş verdi");
                 }
             })
     }

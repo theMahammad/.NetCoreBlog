@@ -53,6 +53,26 @@ namespace adminblog.Controllers
             string path = @"C:\MyBlog\MyBlog\wwwroot\img\"+fileName;
             System.IO.File.Delete(path);
         }
+        [Route("PublishToggle")]
+        public IActionResult PublishToggle(int id){
+            
+            var blog = _context.Blogs.FirstOrDefault(b=>b.Id==id);
+            try{
+            if(blog.isPublished==false){
+                    blog.isPublished=true;
+                    
+            }else{
+                    blog.isPublished=false;
+            }
+            _context.Update(blog);
+            _context.SaveChanges();
+            return Json(blog);
+            }catch(Exception ex){
+            return this.BadRequest("Prosesdə problem baş verdi");
+            }
+            
+            
+        }
         [Route("HomePage")]
         public IActionResult Index()
         {
