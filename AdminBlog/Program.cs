@@ -1,4 +1,5 @@
 using AdminBlog.Models;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 
 using Microsoft.EntityFrameworkCore.Design;
@@ -11,6 +12,15 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BlogContext>(options=> options.UseSqlServer(builder.Configuration.GetConnectionString("MyBlogCore")));
 builder.Services.AddSession();
+builder.Services.Configure<RazorViewEngineOptions>(o=>{
+    o.ViewLocationFormats.Clear();
+    
+    o.ViewLocationFormats.Add("/Views/Admin/{1}/{0}"+RazorViewEngine.ViewExtension);
+    o.ViewLocationFormats.Add("/Views/Admin/Shared/{0}" + RazorViewEngine.ViewExtension);
+    o.ViewLocationFormats.Add("/Views/User/{1}/{0}"+RazorViewEngine.ViewExtension);
+    o.ViewLocationFormats.Add("/Views/User/Shared/{0}" + RazorViewEngine.ViewExtension);
+
+});
 var app = builder.Build();
 
 
@@ -35,8 +45,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 app.UseSession();
-app.MapControllerRoute(
+app.MapControllerRoute( 
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=UserHome}/{action=Index}/{id?}");
 
 app.Run();

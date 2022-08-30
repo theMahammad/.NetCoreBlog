@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n1aKl2D8JMfyZDYagdKpOKp/PFaaB2oHrYpGi0hTD5qmhd03Sed8UbyK4clI00KjTk1IvB9cNx6Yyu/cmtTDSQ==",
+  "dgSpecHash": "MezzClhcp+jjFtyUhiRVVOSZh2C04AShcE6EHb1zOk21JL/rllBrw/aY2nCgxmtvwTLY5QLsUJF1JQRyBZ6TDg==",
   "success": true,
-  "projectFilePath": "C:\\myblog\\MyBlogLibrary\\MyBlogLibrary.csproj",
+  "projectFilePath": "C:\\MyBlog\\MyBlogLibrary\\MyBlogLibrary.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

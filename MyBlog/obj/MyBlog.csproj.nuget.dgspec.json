@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\myblog\\myblog\\MyBlog.csproj": {}
+    "C:\\MyBlog\\MyBlog\\MyBlog.csproj": {}
   },
   "projects": {
-    "C:\\myblog\\MyBlogLibrary\\MyBlogLibrary.csproj": {
+    "C:\\MyBlog\\MyBlogLibrary\\MyBlogLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\myblog\\MyBlogLibrary\\MyBlogLibrary.csproj",
+        "projectUniqueName": "C:\\MyBlog\\MyBlogLibrary\\MyBlogLibrary.csproj",
         "projectName": "MyBlogLibrary",
-        "projectPath": "C:\\myblog\\MyBlogLibrary\\MyBlogLibrary.csproj",
+        "projectPath": "C:\\MyBlog\\MyBlogLibrary\\MyBlogLibrary.csproj",
         "packagesPath": "C:\\Users\\hssjx\\.nuget\\packages\\",
-        "outputPath": "C:\\myblog\\MyBlogLibrary\\obj\\",
+        "outputPath": "C:\\MyBlog\\MyBlogLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\myblog\\myblog\\MyBlog.csproj": {
+    "C:\\MyBlog\\MyBlog\\MyBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\myblog\\myblog\\MyBlog.csproj",
+        "projectUniqueName": "C:\\MyBlog\\MyBlog\\MyBlog.csproj",
         "projectName": "MyBlog",
-        "projectPath": "C:\\myblog\\myblog\\MyBlog.csproj",
+        "projectPath": "C:\\MyBlog\\MyBlog\\MyBlog.csproj",
         "packagesPath": "C:\\Users\\hssjx\\.nuget\\packages\\",
-        "outputPath": "C:\\myblog\\myblog\\obj\\",
+        "outputPath": "C:\\MyBlog\\MyBlog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -90,8 +90,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\myblog\\MyBlogLibrary\\MyBlogLibrary.csproj": {
-                "projectPath": "C:\\myblog\\MyBlogLibrary\\MyBlogLibrary.csproj"
+              "C:\\MyBlog\\MyBlogLibrary\\MyBlogLibrary.csproj": {
+                "projectPath": "C:\\MyBlog\\MyBlogLibrary\\MyBlogLibrary.csproj"
               }
             }
           }

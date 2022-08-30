@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lI8h9LKYT2BLoopHsGDxQqru9PdCOxDRecboupnFSuM=",
+  "Hash": "4sy+1cQsrrPLLyamijn/rO3OjS5XlwTaZyp7mOKtdqk=",
   "Source": "AdminBlog",
   "BasePath": "_content/AdminBlog",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\MyBlog\\AdminBlog\\wwwroot\\css\\User\\styles.css",
+      "SourceId": "AdminBlog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\MyBlog\\AdminBlog\\wwwroot\\",
+      "BasePath": "_content/AdminBlog",
+      "RelativePath": "css/User/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\User\\styles.css"
     },
     {
       "Identity": "C:\\MyBlog\\AdminBlog\\wwwroot\\favicon.ico",

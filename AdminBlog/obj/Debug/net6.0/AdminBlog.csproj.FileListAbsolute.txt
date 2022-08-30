@@ -53,7 +53,6 @@ C:\myblog\AdminBlog\obj\Debug\net6.0\AdminBlog.RazorAssemblyInfo.cache
 C:\myblog\AdminBlog\obj\Debug\net6.0\AdminBlog.RazorAssemblyInfo.cs
 C:\myblog\AdminBlog\obj\Debug\net6.0\staticwebassets.build.json
 C:\myblog\AdminBlog\obj\Debug\net6.0\staticwebassets.development.json
-C:\myblog\AdminBlog\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\myblog\AdminBlog\obj\Debug\net6.0\scopedcss\bundle\AdminBlog.styles.css
 C:\myblog\AdminBlog\obj\Debug\net6.0\scopedcss\projectbundle\AdminBlog.bundle.scp.css
 C:\myblog\AdminBlog\obj\Debug\net6.0\AdminBlog.csproj.CopyComplete
@@ -61,3 +60,4 @@ C:\myblog\AdminBlog\obj\Debug\net6.0\AdminBlog.dll
 C:\myblog\AdminBlog\obj\Debug\net6.0\ref\AdminBlog.dll
 C:\myblog\AdminBlog\obj\Debug\net6.0\AdminBlog.pdb
 C:\myblog\AdminBlog\obj\Debug\net6.0\AdminBlog.genruntimeconfig.cache
+C:\MyBlog\AdminBlog\obj\Debug\net6.0\scopedcss\Views\Admin\Shared\_Layout.cshtml.rz.scp.css
