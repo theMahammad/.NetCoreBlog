@@ -49,9 +49,25 @@ namespace adminblog.Controllers
             }
             return sb.ToString();
         }
+        public string GenerateSlug(string title){
+            var slug = TurnToAscii(title);
+            var tempSlug = slug.Clone();
+            int repetitionTimes=0;
+            while(CheckSlugRepetition(tempSlug.ToString())){
+                repetitionTimes++;
+                tempSlug+=$"_{repetitionTimes}";
+            }
+            if(repetitionTimes!=0){
+            slug+=$"_{repetitionTimes}";
+            }
+            
+            return slug;
+
+        }
         public bool CheckSlugRepetition(string slug){
             var blog = _context.Blogs.FirstOrDefault(b=> b.Slug==slug);
             if(blog!=null){
+                
                 return true;
             }
             return false;
@@ -118,7 +134,7 @@ namespace adminblog.Controllers
             blog.ImagePath=fileName;
             
             blog.AuthorId = (int) HttpContext.Session.GetInt32("id");
-            var slug = TurnToAscii(blog.Title);
+            var slug = GenerateSlug(blog.Title);
 
              
             blog.Slug = slug;
@@ -149,8 +165,8 @@ namespace adminblog.Controllers
             
         }
         [Route("EditBlog")]
-        public ActionResult EditBlog(int id){
-            Blog selectedBlog = _context.Blogs.Find(id);
+        public ActionResult EditBlog(string T){
+            Blog selectedBlog = _context.Blogs.FirstOrDefault(b=> b.Slug==T);
             ViewBag.selectedBlog=selectedBlog;
             ViewBag.context=_context;
             ViewBag.Categories = _context.Categories.ToList();
@@ -169,6 +185,7 @@ namespace adminblog.Controllers
             blog.Content=blogUpdated.Content;
             blog.Title=blogUpdated.Title;
             blog.Subtitle=blogUpdated.Subtitle;
+            blog.Slug=GenerateSlug(blog.Title);
                   if(Request.Form.Files.Count!=0){
                  var files = Request.Form.Files;
                 var file = files.First();

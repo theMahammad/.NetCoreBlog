@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdminBlog.Models
 {
-    public class Blog:IDisposable
+    public class Blog
     {
         public int Id { get; set; }
     
@@ -25,23 +25,6 @@ namespace AdminBlog.Models
 
          bool disposed;
 
-    protected virtual void Dispose(bool disposing)
-    {
-        if (!disposed)
-        {
-            if (disposing)
-            {
-                //dispose managed resources
-            }
-        }
-        //dispose unmanaged resources
-        disposed = true;
-    }
-
-    public void Dispose()
-    {
-        Dispose(true);
-        GC.SuppressFinalize(this);
-    }
+    
     }
 }

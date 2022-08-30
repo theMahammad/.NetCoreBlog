@@ -39,7 +39,7 @@
         <td>
             
            <a type="button" class="btn btn-danger" onclick="DeleteBlog(@item.Id)" >Sil</a>
-           <a type="link" href="/Blog/EditBlog?Id=@item.Id" class="btn btn-warning" >Dəyişdir</a>
+           <a type="link" href="/Blog/EditBlog?T=@item.Slug" class="btn btn-warning" >Dəyişdir</a>
             
         </td>
         
@@ -94,7 +94,7 @@
         <td>@context.Categories.Find(
             item.CategoryId).Name</td>
         <td>
-           <a type="link" href="/Blog/EditBlog?Id=@item.Id" class="btn btn-warning" >Detallı bax</a>
+           <a type="link" href="/Blog/EditBlog?T=@item.Slug" class="btn btn-warning" >Detallı bax</a>
             
         </td>
         <td>
