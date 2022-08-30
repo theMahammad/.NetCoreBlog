@@ -1,0 +1,118 @@
+@{
+    ViewData["Title"] = "Bloqu düzəlt";
+    Blog selectedBlog = ViewBag.selectedBlog;
+    BlogContext context = ViewBag.context;
+    Category category = context.Categories.Find(@selectedBlog.CategoryId);
+    var loginId = Context.Session.GetInt32("id");
+    
+    
+}
+ <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<h1>@ViewData["Title"]</h1>
+
+<img src="/img/@selectedBlog.ImagePath" alt="" >
+<form action="/Blog/SaveBlog" id="BlogForm" enctype="multipart/form-data" >
+<div class="form-group">
+   <input type="text" id="Id" hidden value="@selectedBlog.Id">
+    <label for="Title">Başlıq</label>
+     <input type="text" class="form-control" name="Title" id="Title" value="@selectedBlog.Title">
+</div>
+<div class="form-group">
+    <label for="Subtitle">Altbaşlıq</label>
+     <input type="text" class="form-control" name="Subtitle" id="Subtitle" value="@selectedBlog.Subtitle">
+</div>
+
+<div class="form-group">
+    <label for="summernote">Mətn</label>
+<textarea id="summernote" name="Content"></textarea>
+</div>
+<div class="form-group">
+    <input class="form-control" type="file" name="ImagePath" id="ImagePath"  >
+    <input type="text"  hidden id="HiddenImagePath" value="@selectedBlog.ImagePath">
+</div>
+<div class="form-group">
+    @Html.Label(null,"Kateqoriya",new {@for="Categories"})
+    <select name="Categories" id="Categories" class="form-control">
+        @foreach (var cat in ViewBag.Categories)
+        {
+            <option value="@cat.Id">@cat.Name</option>
+        }
+        
+    </select>
+</div>
+<button type="button" class="btn btn-primary form-control" onclick="ConfirmChangesOnBlog()" id="SubmitButton">Dəyişikliyi təsdiqlə</button>
+<button type="reset" hidden id="ResetButton"></button>
+</form> 
+@section Scripts{
+     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(`[value=${@selectedBlog.CategoryId}]`).get(0).selected=true
+             $('#summernote').summernote()
+             console.log('@Html.Raw(@selectedBlog.Content)')
+             $('#summernote').summernote('code','@Html.Raw(@selectedBlog.Content)'); // Using "Html.Raw" provide us to decode encoded html text 
+           
+           if(@loginId==0){
+             $('.form-control').each(function(){
+            $(this).css('pointer-events', 'none');
+            });
+            $('#summernote').summernote('disable')
+            $('#SubmitButton').prop('disabled',true)
+           }
+           
+          
+  
+
+        })
+           
+          
+             function ConfirmChangesOnBlog(){
+            var fileInput=document.getElementById("ImagePath")
+            var files = fileInput.files;
+                
+             var form = $('#BlogForm').get(0);
+            var data= new FormData(form);
+            
+            data.append("id",document.getElementById("Id").value);
+            data.append("title",document.getElementById("Title").value)
+            data.append("subtitle",document.getElementById("Subtitle").value)
+            data.append('content',$('#summernote').summernote('code'))
+            data.append('categoryid',document.getElementById('Categories').value);
+            for(var i=0; i < files.length; i++){
+                    data.append(files[i].name,files[i]);
+            }
+            
+            console.log(data);
+            @* data.append('creationtime',(@selectedBlog.CreationTime).toString())
+            data.append('authorid',(@selectedBlog.AuthorId).toString())
+            data.append('ispublished',(@selectedBlog.isPublished).toString()) *@
+            
+           
+             $.ajax({
+                url: "/Blog/EditBlogConfirming",
+                type : "POST",
+                contentType : false,
+                processData : false,
+                data : data,
+                success : function(result){
+                    console.log("Dəyişikliklər uğurla edildi")
+                    location.href="/Blog/HomePage"
+                    
+                },
+                error : function(result){
+                    console.log(result);
+                }
+            })  
+                   
+            
+                
+           }   
+           //var form = document.getElementById("BlogForm")
+           //var formData= new FormData(form);
+            
+            
+
+        
+    </script>
+}
