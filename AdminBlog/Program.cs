@@ -34,12 +34,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseStaticFiles(new StaticFileOptions
-        {
-            FileProvider = new PhysicalFileProvider(
-            Path.Combine(@"C:\MyBlog\MyBlog\wwwroot", "img")),
-            RequestPath = "/img"
-        });
+
 
 app.UseRouting();
 

@@ -16,6 +16,12 @@ public class UserHomeController : Controller
     public IActionResult Index()
     {
         return View();
+    
+    }
+    [Route("Post")]
+      public IActionResult Post(){
+
+        return View();
     }
 
     public IActionResult Privacy()
