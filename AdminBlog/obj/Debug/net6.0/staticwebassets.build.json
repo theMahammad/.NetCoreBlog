@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4AuySgjWBL/KCAIhdv+3B2pdYYJhOCCAsQlncmsamRA=",
+  "Hash": "P3AQJGwMzqfwcLcXoIFYIe7C7BQZl4SC0LT+i+uSZF8=",
   "Source": "AdminBlog",
   "BasePath": "_content/AdminBlog",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\0830163232_men_gedirem_day.png"
+    },
+    {
+      "Identity": "C:\\MyBlog\\AdminBlog\\wwwroot\\img\\0902221556_conorun_ilk_bloqu.png",
+      "SourceId": "AdminBlog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\MyBlog\\AdminBlog\\wwwroot\\",
+      "BasePath": "_content/AdminBlog",
+      "RelativePath": "img/0902221556_conorun_ilk_bloqu.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\0902221556_conorun_ilk_bloqu.png"
     },
     {
       "Identity": "C:\\MyBlog\\AdminBlog\\wwwroot\\img\\about-bg.jpg",

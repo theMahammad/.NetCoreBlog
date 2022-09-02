@@ -1,0 +1,59 @@
+
+@{
+    ViewData["Title"]= "İstifadəçilərin göndərdiyi mesajlar";
+    var LoginId = Context.Session.GetInt32("id");
+    
+    }
+<h1> @ViewData["Title"]</h1>
+@if(ViewBag.data is List<UserMessage>){
+<div id="MessagesList">
+    
+<table class="table table-bordered">
+    <thead>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Email</th>
+        <th>Şifrə</th>  
+        <th>Əməliyyatlar</th>
+    </thead>
+     <tbody>
+    @if(ViewBag.data!=null){
+
+ @foreach (var item in ViewBag.data)
+{
+    <tr id="@item.Id" class="clickable-row" onclick="ShowMessage(@item.Id)">
+       
+        <td>@item.Name</td>
+        <td>@item.Email</td>
+        <td>@item.PhoneNumber</td>
+        </tr>
+        
+        
+       
+    
+}
+    }
+    </tbody>
+   
+   
+</table>
+
+</div>
+}else{
+    <h2>Salam</h2>
+}
+
+
+@section Scripts{
+
+<script>
+    $(document).ready(function(){
+    
+    })
+    function ShowMessage(id){
+        window.location=`/Home/UserMessages?Id=${id}`
+    }
+    
+</script>
+}

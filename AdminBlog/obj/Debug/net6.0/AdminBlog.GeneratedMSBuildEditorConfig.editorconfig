@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/MyBlog/AdminBlog/Views/Admin/Home/UserMessages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZVxVc2VyTWVzc2FnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/MyBlog/AdminBlog/Views/Admin/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -61,6 +65,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/MyBlog/AdminBlog/Views/User/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyBlog/AdminBlog/Views/User/UserHome/AllPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VySG9tZVxBbGxQb3N0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/MyBlog/AdminBlog/Views/User/UserHome/Contact.cshtml]

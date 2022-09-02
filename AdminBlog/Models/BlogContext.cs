@@ -23,7 +23,11 @@ namespace AdminBlog.Models
              modelBuilder.Entity<Blog>()
                  .Property(b => b.CreationTime)
                  .HasDefaultValue(DateTime.Now);
-               }
+
+            modelBuilder.Entity<UserMessage>()
+                .Property(um=>um.IsReaded)
+                .HasDefaultValue(false);
+                }
          
         
     }

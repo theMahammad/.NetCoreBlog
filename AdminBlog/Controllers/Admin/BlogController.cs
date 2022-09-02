@@ -73,7 +73,7 @@ namespace adminblog.Controllers
             return false;
         }
         public void DeleteFile(string fileName){
-            string path = @"C:\MyBlog\MyBlog\wwwroot\img\"+fileName;
+            string path = @"C:\MyBlog\AdminBlog\wwwroot\img\"+fileName;
             System.IO.File.Delete(path);
         }
         [Route("PublishToggle")]
@@ -124,7 +124,7 @@ namespace adminblog.Controllers
             var files = Request.Form.Files;
             var file = files.First();
             // File Save Operation
-                string savePath = Path.Combine("C:","MyBlog","MyBlog","wwwroot","img");
+                string savePath = Path.Combine("C:","MyBlog","AdminBlog","wwwroot","img");
                 var fileName =TurnToAscii($"{DateTime.Now:MMddHHmmss}_{blog.Title}.{file.FileName.Split(".").Last()}");
                 var fileUrl = Path.Combine(savePath,fileName);
                 using ( var fileStream = new FileStream(fileUrl,FileMode.Create)){

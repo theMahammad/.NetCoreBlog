@@ -16318,6 +16318,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\MyBlog\\AdminBlog\\Views\\Admin\\Home\\UserMessages.cshtml",
+      "TargetPath": "Views\\Admin\\Home\\UserMessages.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\MyBlog\\AdminBlog\\Views\\Admin\\Blog\\Blog.cshtml",
       "TargetPath": "Views\\Admin\\Blog\\Blog.cshtml",
       "FileKind": "mvc"
@@ -16350,6 +16355,11 @@
     {
       "FilePath": "c:\\MyBlog\\AdminBlog\\Views\\Admin\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Admin\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\MyBlog\\AdminBlog\\Views\\User\\UserHome\\AllPosts.cshtml",
+      "TargetPath": "Views\\User\\UserHome\\AllPosts.cshtml",
       "FileKind": "mvc"
     },
     {

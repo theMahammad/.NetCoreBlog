@@ -44,6 +44,12 @@ public class UserHomeController : Controller
         ViewBag.context = _context;
         return View(selectedBlog);
     }
+    [Route("AllPosts")]
+    public IActionResult AllPosts(){
+        var blogs = _context.Blogs.ToList();
+        ViewBag.context = _context;
+        return View(blogs);
+    }
     [Route("Contact")]
     public ActionResult Contact(){
 

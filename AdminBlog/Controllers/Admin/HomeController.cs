@@ -106,6 +106,19 @@ public class HomeController : Controller
         
         return View(_context.Authors.ToList());
     }
+    public IActionResult UserMessages(int id){
+        ViewBag.context = _context;
+        ViewBag.data=_context.UserMessages.ToList();
+        if(id!=0){
+            var userMessage = _context.UserMessages.FirstOrDefault(um=>um.Id==id);
+            ViewBag.data=userMessage;
+        }
+        
+        
+        return View();
+        
+        
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
