@@ -14,6 +14,21 @@ public class UserHomeController : Controller
         _logger = logger;
         _context=context;
     }
+    [Route("SendMessage")]
+    public async Task<IActionResult> SendMessage(UserMessage message){
+        
+       if(message!=null)
+        {
+        await _context.AddAsync(message);
+        await _context.SaveChangesAsync();
+        return this.Ok("Mesaj göndərildi");
+       
+        
+       }else{
+            return this.BadRequest("Mesaj göndərilmədi");
+       }
+        
+    }
 
     public IActionResult Index()
     {
@@ -24,7 +39,13 @@ public class UserHomeController : Controller
     
     }
     [Route("Post")]
-      public IActionResult Post(){
+      public IActionResult Post(string T){
+        var selectedBlog = _context.Blogs.FirstOrDefault(b=> b.Slug==T);
+        ViewBag.context = _context;
+        return View(selectedBlog);
+    }
+    [Route("Contact")]
+    public ActionResult Contact(){
 
         return View();
     }
