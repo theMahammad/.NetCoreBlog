@@ -114,6 +114,9 @@ public class HomeController : Controller
         ViewBag.data=_context.UserMessages.ToList();
         if(id!=0){
             var userMessage = _context.UserMessages.FirstOrDefault(um=>um.Id==id);
+            userMessage.IsReaded = true;
+            _context.Update(userMessage);
+            _context.SaveChanges();
             ViewBag.data=userMessage;
         }
         
@@ -127,7 +130,7 @@ public class HomeController : Controller
                 if(ModelState.IsValid){
                     var senderEmail = new MailAddress("hssjxie@gmail.com","Məhəmməd Sadıqzadə");
                     var receiverEmail = new MailAddress(receiver,"Receiver");
-                    var password = "*********"; //Here is a generated password from google 
+                    var password = "**********"; //Here is a generated password from google 
                     var sub = subject;
                     var content = message;
                     var smtp = new SmtpClient{

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MyBlog\\AdminBlog\\AdminBlog.csproj": {}
+    "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlog\\AdminBlog.csproj": {}
   },
   "projects": {
-    "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj": {
+    "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
         "projectName": "AdminBlogLibrary",
-        "projectPath": "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
-        "packagesPath": "C:\\Users\\hssjx\\.nuget\\packages\\",
-        "outputPath": "C:\\MyBlog\\AdminBlogLibrary\\obj\\",
+        "projectPath": "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
+        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlogLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hssjx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -49,7 +49,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,24 +59,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\MyBlog\\AdminBlog\\AdminBlog.csproj": {
+    "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlog\\AdminBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MyBlog\\AdminBlog\\AdminBlog.csproj",
+        "projectUniqueName": "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlog\\AdminBlog.csproj",
         "projectName": "AdminBlog",
-        "projectPath": "C:\\MyBlog\\AdminBlog\\AdminBlog.csproj",
-        "packagesPath": "C:\\Users\\hssjx\\.nuget\\packages\\",
-        "outputPath": "C:\\MyBlog\\AdminBlog\\obj\\",
+        "projectPath": "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlog\\AdminBlog.csproj",
+        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hssjx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,8 +91,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj": {
-                "projectPath": "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj"
+              "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj": {
+                "projectPath": "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj"
               }
             }
           }
@@ -135,7 +136,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -147,7 +149,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

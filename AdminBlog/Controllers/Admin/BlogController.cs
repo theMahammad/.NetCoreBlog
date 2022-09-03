@@ -11,6 +11,7 @@ using System.IO;
 using System.Text;
 using System.Drawing;  
 using System.Web;
+using System.Runtime.ConstrainedExecution;
 
 namespace adminblog.Controllers
 {
@@ -123,8 +124,8 @@ namespace adminblog.Controllers
            if(blog != null){
             var files = Request.Form.Files;
             var file = files.First();
-            // File Save Operation
-                string savePath = Path.Combine("C:","MyBlog","AdminBlog","wwwroot","img");
+                // File Save Operation
+                string savePath = @"C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlog\wwwroot\img";
                 var fileName =TurnToAscii($"{DateTime.Now:MMddHHmmss}_{blog.Title}.{file.FileName.Split(".").Last()}");
                 var fileUrl = Path.Combine(savePath,fileName);
                 using ( var fileStream = new FileStream(fileUrl,FileMode.Create)){

@@ -10,3 +10,15 @@ C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.csproj.CoreCompileI
 C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.dll
 C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\ref\AdminBlogLibrary.dll
 C:\myblog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.pdb
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\bin\Debug\net6.0\AdminBlogLibrary.deps.json
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\bin\Debug\net6.0\AdminBlogLibrary.dll
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\bin\Debug\net6.0\AdminBlogLibrary.pdb
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.csproj.AssemblyReference.cache
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.AssemblyInfoInputs.cache
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.AssemblyInfo.cs
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.csproj.CoreCompileInputs.cache
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.dll
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\obj\Debug\net6.0\refint\AdminBlogLibrary.dll
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\obj\Debug\net6.0\AdminBlogLibrary.pdb
+C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlogLibrary\obj\Debug\net6.0\ref\AdminBlogLibrary.dll

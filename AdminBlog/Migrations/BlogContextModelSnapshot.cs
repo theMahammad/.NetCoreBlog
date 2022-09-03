@@ -72,7 +72,7 @@ namespace AdminBlog.Migrations
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 9, 3, 11, 52, 28, 845, DateTimeKind.Local).AddTicks(4807));
+                        .HasDefaultValue(new DateTime(2022, 9, 4, 3, 10, 32, 191, DateTimeKind.Local).AddTicks(4528));
 
                     b.Property<string>("ImagePath")
                         .IsRequired()

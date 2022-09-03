@@ -5,93 +5,167 @@
     
     }
 <h1> @ViewData["Title"]</h1>
-@if(ViewBag.data is List<UserMessage>){
-    List<UserMessage> allMessages = ViewBag.data;
-        
-            
-<div id="MessagesList">
-    
-<table class="table table-bordered">
-    <thead>
-       
-        <th>Ad</th>
-        <th>Email</th>
-        <th>Əlaqə nömrəsi</th>
-        <th>Başlıq</th>  
-        <th>Əməliyyatlar</th>
-    </thead>
-     <tbody>
-    @if(allMessages!=null){
-
- @foreach (var item in allMessages)
-{
-    <tr id="@item.Id" class="clickable-row" >
-       
-        <td>@item.Name</td>
-        <td>@item.Email</td>
-        <td>@item.PhoneNumber</td>
-        <td>@item.Title</td>
-        <td><a type="link" href="/Home/UserMessages?Id=@item.Id" class="btn btn-warning">Detallı bax</a></td>
-        </tr>
-        
-        
-       
-    
-}
-    }
-    </tbody>
-   
-   
-</table>
-
-</div>
+@if(LoginId!=0){
+    <script>
+        $(document).ready(function(){
+            alert("Yazarlara giriş icazəsi yoxdur")
+            window.location="/AdminPanel"
+        })
+    </script>
 }else{
-    UserMessage selectedMessage = ViewBag.data;
-    <section id="SentMessage">
-    <div class="card" style="text-align: center;">
-  <h5 class="card-header">@selectedMessage.Name</h5>
-  <div class="card-body">
-    <h5 class="card-title" style="font-weight: bold;">@selectedMessage.Title</h5>
-    <p class="card-text" >@selectedMessage.Content</p>
-    <a type="button" onclick="ShowSendingEmailSection()" class="btn btn-primary">@selectedMessage.Email adressinə mail göndər</a>
-  </div>
-</div>
-</section>
-<section id="SendingEmail" >
-    <form method="post" action="/Home/SendEmail">
-<div class = "container" > 
-<span class = "form-control-static" > Receiver: </span> 
-<input class = "form-control" id="receiver" type = "text"  name = "receiver" value="@selectedMessage.Email"/> <br/> 
-<span class = "form-control-static" > Subject: </span> 
-<input class = "form-control" id="subject" type = "text"  name = "subject"/> <br/> 
-<span class = "form-control-static" > Message: <span> 
-    
-<textarea class = "form-control"  id="message" type = "text"  name = "message" > </textarea> <br/>
-<input class = "btn btn-primary"  type = "submit"  value = "Send"/> 
-</div>
- </form>  
-    
-</section>
-<script>
-    
-</script>
-       
-        
+    @if (ViewBag.data is List<UserMessage>)
+    {
+        List<UserMessage> allMessages = ViewBag.data;
 
-}
+        @if (allMessages.FirstOrDefault(m => m.IsReaded == false) != null)
+        {
+            <h2>
+                Oxunmamış mesajlar
+            </h2>
+            <div id="UnreadedMessagesList">
+
+                <table class="table table-bordered">
+                    <thead>
+
+                    <th>Ad</th>
+                    <th>Email</th>
+                    <th>Əlaqə nömrəsi</th>
+                    <th>Başlıq</th>
+                    <th>Əməliyyatlar</th>
+                    </thead>
+                    <tbody>
+                        @if (allMessages != null)
+                        {
+
+                            @foreach (var item in allMessages)
+                            {
+                                if (item.IsReaded == false)
+                                {
 
 
-@section Scripts{
+                                    <tr id="@item.Id" class="clickable-row">
 
-<script>
-    $(document).ready(function(){
-    $('#SendingEmail').hide();
-    })
-    function ShowSendingEmailSection(){
-        $('#SendingEmail').show();
-        
+                                        <td>@item.Name</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.PhoneNumber</td>
+                                        <td>@item.Title</td>
+                                        <td><a type="link" href="/Home/UserMessages?Id=@item.Id" class="btn btn-warning">Detallı bax</a></td>
+                                    </tr>
+                                }
+
+
+
+
+                            }
+                        }
+                    </tbody>
+
+
+                </table>
+
+            </div>
+        }
+        @if (allMessages.FirstOrDefault(m => m.IsReaded == true) != null)
+        {
+            <h2>
+                Oxunmuş mesajlar
+            </h2>
+            <div id="ReadedMessagesList">
+
+                <table class="table table-bordered">
+                    <thead>
+
+                    <th>Ad</th>
+                    <th>Email</th>
+                    <th>Əlaqə nömrəsi</th>
+                    <th>Başlıq</th>
+                    <th>Əməliyyatlar</th>
+                    </thead>
+                    <tbody>
+                        @if (allMessages != null)
+                        {
+
+                            @foreach (var item in allMessages)
+                            {
+                                if (item.IsReaded == true)
+                                {
+
+
+                                    <tr id="@item.Id" class="clickable-row">
+
+                                        <td>@item.Name</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.PhoneNumber</td>
+                                        <td>@item.Title</td>
+                                        <td><a type="link" href="/Home/UserMessages?Id=@item.Id" class="btn btn-warning">Detallı bax</a></td>
+                                    </tr>
+                                }
+
+
+
+
+                            }
+                        }
+                    </tbody>
+
+
+                </table>
+
+            </div>
+        }
+
     }
-   
-    
-</script>
+    else
+    {
+        UserMessage selectedMessage = ViewBag.data;
+        <section id="SentMessage">
+            <div class="card" style="text-align: center;">
+                <h5 class="card-header">@selectedMessage.Name</h5>
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">@selectedMessage.Title</h5>
+                    <p class="card-text">@selectedMessage.Content</p>
+                    <a type="button" onclick="ShowSendingEmailSection()" class="btn btn-primary">@selectedMessage.Email adressinə mail göndər</a>
+                </div>
+            </div>
+        </section>
+        <section id="SendingEmail">
+            <form method="post" action="/Home/SendEmail">
+                <div class="container">
+                    <span class="form-control-static"> Receiver: </span>
+                    <input class="form-control" id="receiver" type="text" name="receiver" value="@selectedMessage.Email" /> <br />
+                    <span class="form-control-static"> Subject: </span>
+                    <input class="form-control" id="subject" type="text" name="subject" /> <br />
+                    <span class="form-control-static">
+                        Message: <span>
+
+        <textarea class="form-control" id="message" type="text" name="message"> </textarea> <br />
+                            <input class="btn btn-primary" type="submit" value="Send" />
+                </div>
+            </form>
+
+        </section>
+        <script>
+
+        </script>
+
+
+
+    }
+
+
+    @section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            $('#SendingEmail').hide();
+        })
+        function ShowSendingEmailSection() {
+            $('#SendingEmail').show();
+
+        }
+
+
+    </script>
 }
+}
+

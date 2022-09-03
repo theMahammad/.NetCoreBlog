@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kOHl+aCtYXp4EoKonLr9X/iQTCei7rEevRgzSVmECgV/zpWI5mdgY7aA3E0IlL0LOUKDQvPRJa1r5iHDzaZZxQ==",
+  "dgSpecHash": "fe6U+VBg/vFLZWOATPpiGZ5F8+8iWBOl++CMhVx2/KEnnkqd8DXaCUQirUY9xz1bvjLpcvC97SOG8LfvU/3qiw==",
   "success": true,
-  "projectFilePath": "C:\\MyBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
+  "projectFilePath": "C:\\Users\\acer\\source\\repos\\MyBlog\\.NetCoreBlog\\AdminBlogLibrary\\AdminBlogLibrary.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

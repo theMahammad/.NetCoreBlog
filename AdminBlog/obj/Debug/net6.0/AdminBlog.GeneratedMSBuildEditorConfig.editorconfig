@@ -8,81 +8,81 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AdminBlog
 build_property.RootNamespace = AdminBlog
-build_property.ProjectDir = C:\MyBlog\AdminBlog\
+build_property.ProjectDir = C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlog\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\MyBlog\AdminBlog
+build_property.MSBuildProjectDirectory = C:\Users\acer\source\repos\MyBlog\.NetCoreBlog\AdminBlog
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Blog/Blog.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Blog/Blog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmxvZ1xCbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Blog/EditBlog.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Blog/EditBlog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmxvZ1xFZGl0QmxvZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Blog/Index.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Home/Author.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Home/Author.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZVxBdXRob3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Home/Category.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Home/Category.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZVxDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Home/Index.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Home/UserMessages.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Home/UserMessages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZVxVc2VyTWVzc2FnZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Shared/Error.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Shared/salam.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Shared/salam.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hhcmVkXHNhbGFtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/_ViewImports.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/_ViewStart.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/User/Shared/_Layout.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/User/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTaGFyZWRcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/User/UserHome/AllPosts.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/User/UserHome/AllPosts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VySG9tZVxBbGxQb3N0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/User/UserHome/Contact.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/User/UserHome/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VySG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/User/UserHome/Index.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/User/UserHome/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VySG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/User/UserHome/Post.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/User/UserHome/Post.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VySG9tZVxQb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyBlog/AdminBlog/Views/Admin/Shared/_Layout.cshtml]
+[C:/Users/acer/source/repos/MyBlog/.NetCoreBlog/AdminBlog/Views/Admin/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-roouoqzx0n
