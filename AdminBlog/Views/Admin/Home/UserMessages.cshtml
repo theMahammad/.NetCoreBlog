@@ -47,14 +47,34 @@
 </div>
 }else{
     UserMessage selectedMessage = ViewBag.data;
+    <section id="SentMessage">
     <div class="card" style="text-align: center;">
   <h5 class="card-header">@selectedMessage.Name</h5>
   <div class="card-body">
     <h5 class="card-title" style="font-weight: bold;">@selectedMessage.Title</h5>
     <p class="card-text" >@selectedMessage.Content</p>
-    <a href="#" class="btn btn-primary">@selectedMessage.Email adressinə mail göndər</a>
+    <a type="button" onclick="ShowSendingEmailSection()" class="btn btn-primary">@selectedMessage.Email adressinə mail göndər</a>
   </div>
 </div>
+</section>
+<section id="SendingEmail" >
+    <form method="post" action="/Home/SendEmail">
+<div class = "container" > 
+<span class = "form-control-static" > Receiver: </span> 
+<input class = "form-control" id="receiver" type = "text"  name = "receiver" value="@selectedMessage.Email"/> <br/> 
+<span class = "form-control-static" > Subject: </span> 
+<input class = "form-control" id="subject" type = "text"  name = "subject"/> <br/> 
+<span class = "form-control-static" > Message: <span> 
+    
+<textarea class = "form-control"  id="message" type = "text"  name = "message" > </textarea> <br/>
+<input class = "btn btn-primary"  type = "submit"  value = "Send"/> 
+</div>
+ </form>  
+    
+</section>
+<script>
+    
+</script>
        
         
 
@@ -65,8 +85,12 @@
 
 <script>
     $(document).ready(function(){
-    
+    $('#SendingEmail').hide();
     })
+    function ShowSendingEmailSection(){
+        $('#SendingEmail').show();
+        
+    }
    
     
 </script>

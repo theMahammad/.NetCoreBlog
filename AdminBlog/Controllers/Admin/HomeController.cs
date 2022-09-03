@@ -4,6 +4,9 @@ using AdminBlog.Models;
 using Microsoft.EntityFrameworkCore;
 namespace AdminBlog.Controllers;
 
+using System.Net;
+using System.Net.Mail;
+
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -119,6 +122,33 @@ public class HomeController : Controller
         
         
     }
+    public IActionResult SendEmail(string receiver,string subject, string message){
+      
+                if(ModelState.IsValid){
+                    var senderEmail = new MailAddress("hssjxie@gmail.com","Məhəmməd Sadıqzadə");
+                    var receiverEmail = new MailAddress(receiver,"Receiver");
+                    var password = "*********"; //Here is a generated password from google 
+                    var sub = subject;
+                    var content = message;
+                    var smtp = new SmtpClient{
+                        Host ="smtp.gmail.com",
+                        Port= 587,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        EnableSsl = true,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(senderEmail.Address,password)
+                    };
+                    using(var mess = new MailMessage(senderEmail,receiverEmail){
+                        Subject = sub,
+                        Body = content
+                    }){
+                        smtp.Send(mess);
+                        
+                    }
+                }
+            return RedirectToAction("UserMessages");
+       
+                } 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
