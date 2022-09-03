@@ -37,6 +37,11 @@
                                     <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                                 </div>
                                 <div class="form-floating">
+                                    <input class="form-control" id="title" name="Title" type="text" placeholder="Enter your message's title.." data-sb-validations="required" />
+                                    <label for="title">Başlıq</label>
+                                    <div class="invalid-feedback" data-sb-feedback="title:required">A Title is required.</div>
+                                </div>
+                                <div class="form-floating">
                                     <textarea class="form-control" id="content" name="Content" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
                                     <label for="message">Mesajınız</label>
                                     <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
@@ -77,15 +82,17 @@
         data.append('email',$('#email').val());
         data.append('phonenumber',$('#phone').val());
         data.append('content',$('#message').val());
+        data.append('title',$('#title').val())
         $.ajax({
             type : "POST",
             url : "/SendMessage",
             contentType : false,
             processData : false,
-            dataType : 'json',
+            
             data : data,
             success : function(result){
                 alert(result);
+               window.location = "/";
             }
         })
         }

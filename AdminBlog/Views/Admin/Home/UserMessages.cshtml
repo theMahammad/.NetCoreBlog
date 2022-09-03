@@ -6,27 +6,32 @@
     }
 <h1> @ViewData["Title"]</h1>
 @if(ViewBag.data is List<UserMessage>){
+    List<UserMessage> allMessages = ViewBag.data;
+        
+            
 <div id="MessagesList">
     
 <table class="table table-bordered">
     <thead>
-        <th>Id</th>
+       
         <th>Ad</th>
-        <th>Soyad</th>
         <th>Email</th>
-        <th>Şifrə</th>  
+        <th>Əlaqə nömrəsi</th>
+        <th>Başlıq</th>  
         <th>Əməliyyatlar</th>
     </thead>
      <tbody>
-    @if(ViewBag.data!=null){
+    @if(allMessages!=null){
 
- @foreach (var item in ViewBag.data)
+ @foreach (var item in allMessages)
 {
-    <tr id="@item.Id" class="clickable-row" onclick="ShowMessage(@item.Id)">
+    <tr id="@item.Id" class="clickable-row" >
        
         <td>@item.Name</td>
         <td>@item.Email</td>
         <td>@item.PhoneNumber</td>
+        <td>@item.Title</td>
+        <td><a type="link" href="/Home/UserMessages?Id=@item.Id" class="btn btn-warning">Detallı bax</a></td>
         </tr>
         
         
@@ -41,7 +46,18 @@
 
 </div>
 }else{
-    <h2>Salam</h2>
+    UserMessage selectedMessage = ViewBag.data;
+    <div class="card" style="text-align: center;">
+  <h5 class="card-header">@selectedMessage.Name</h5>
+  <div class="card-body">
+    <h5 class="card-title" style="font-weight: bold;">@selectedMessage.Title</h5>
+    <p class="card-text" >@selectedMessage.Content</p>
+    <a href="#" class="btn btn-primary">@selectedMessage.Email adressinə mail göndər</a>
+  </div>
+</div>
+       
+        
+
 }
 
 
@@ -51,9 +67,7 @@
     $(document).ready(function(){
     
     })
-    function ShowMessage(id){
-        window.location=`/Home/UserMessages?Id=${id}`
-    }
+   
     
 </script>
 }
